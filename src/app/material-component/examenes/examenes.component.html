@@ -1,0 +1,35 @@
+<!-- ============================================================== -->
+<!-- Basic Card -->
+<!-- ============================================================== -->
+<mat-card>
+  <mat-card-content>
+    Examenes
+   
+  </mat-card-content>
+</mat-card>
+<!-- ============================================================== -->
+<!-- Image Card row-->
+<!-- ============================================================== -->
+<div fxLayout="row" fxLayoutWrap="wrap">
+  <!-- Card column -->
+  <div fxFlex.gt-sm="33.33%" fxFlex="100"  *ngFor="let exa of examenes">
+      <mat-card>
+          <mat-card-header>
+            <div mat-card-avatar><img src="assets/images/users/1.jpg" class="img-fluid img-circle"/></div>
+            <mat-card-title>{{exa.nombre}}</mat-card-title>
+          <!--  <mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
+          </mat-card-header>
+          <img mat-card-image src="assets/images/examenes.jpg" alt="Imagenes">
+          <mat-card-content>
+             <p>
+               Oprime el botón para iniciar tu examen
+             </p>
+             <p></p>
+             <mat-card-actions>
+                <button mat-raised-button color="accent">REALIZAR</button>
+
+              </mat-card-actions>
+            </mat-card-content>      
+        </mat-card>
+  </div>
+</div>

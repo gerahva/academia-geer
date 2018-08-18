@@ -1,0 +1,99 @@
+    <!-- ============================================================== -->
+    <!-- Basic Card -->
+    <!-- ============================================================== -->
+    <mat-card>
+      <mat-card-content>
+          <div class="text-center"><img alt="homepage" src="assets/images/logo-icon.png"><h4 class="m-t-0">Admin GEER</h4></div>
+          <mat-card-subtitle>Selecciona un video a mostrarse</mat-card-subtitle>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+         
+
+          <div fxLayout="row" fxLayoutWrap="wrap">
+              <!-- col full-->
+              <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+                  <mat-form-field>
+                    
+
+                      <mat-select  matInput placeholder="Selecciona la materia"  [formControl]="form.controls['materia']" >
+                        <mat-option *ngFor="let mate of materias" [value]="mate.value">
+                          {{ mate.viewValue }}
+                        </mat-option>
+                      </mat-select>
+                  </mat-form-field> 
+                  <small *ngIf="form.controls['materia'].hasError('required') && form.controls['materia'].touched" class="text-danger support-text">Materia requerido</small>
+              </div>
+              <!-- col full-->    
+              <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+                  <mat-form-field>
+                    <mat-select  matInput placeholder="Selecciona el bloque"  [formControl]="form.controls['bloque']" >
+                      <mat-option *ngFor="let blo of bloques" [value]="blo.value">
+                        {{ blo.viewValue }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field> 
+                  <small *ngIf="form.controls['bloque'].hasError('required') && form.controls['bloque'].touched" class="text-danger support-text">Bloque requerido</small>
+                
+                </div>
+                <!-- col full-->
+                <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+                  <mat-form-field>
+                    <mat-select  matInput placeholder="Selecciona el curso"  [formControl]="form.controls['curso']" >
+                      <mat-option *ngFor="let cur of cursos" [value]="cur.value">
+                        {{ cur.viewValue }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field> 
+                  <small *ngIf="form.controls['curso'].hasError('required') && form.controls['curso'].touched" class="text-danger support-text">Curso requerido</small>
+                
+                </div>
+              <!-- col half-->
+              
+              <!-- col half-->
+              <div fxFlex.gt-sm="50" fxFlex.gt-xs="50" class="text-right">
+
+              </div>
+              <!-- col full-->    
+              <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+                  <button mat-raised-button color="primary" class="btn-block btn-lg m-t-20 m-b-20" type="submit" [disabled]="!form.valid">Reproducir Video</button> 
+              </div>
+              <!-- col full-->    
+              <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100" class="text-center">
+           
+              </div>    
+           </div>   
+        </form>
+         
+      </mat-card-content>
+    </mat-card>
+    <!-- ============================================================== -->
+    <!-- Image Card row-->
+    <!-- ============================================================== -->
+    <div fxLayout="row" fxLayoutWrap="wrap">
+        <!-- Card column -->
+        <div fxFlex.gt-sm="100%" fxFlex="100">
+            <mat-card>
+              <mat-card-header>
+                <div mat-card-avatar><img src="assets/images/logo-icon.png" class="img-fluid img-circle"/></div>
+                <mat-card-title>GEER</mat-card-title>
+                <mat-card-subtitle>Video tutoriales</mat-card-subtitle>
+              </mat-card-header>
+            <!--  <img mat-card-image src="assets/images/big/img4.jpg" alt="Photo of a Shiba Inu">-->
+              <mat-card-content>
+                  <vg-player  [hidden]="ocultar">
+                      <video [vgMedia]="media" #media id="singleVideo" #videoPlayer  source [src]="videourl" preload="auto" controls style="width: 100%;height: auto;">
+                       
+                      </video>
+                  </vg-player>
+                 <p>
+                 Video tutoriales
+                 </p>
+                 <mat-card-actions>
+                
+                   <!-- <button mat-raised-button  color="primary">Play</button>-->
+                  </mat-card-actions>
+                </mat-card-content>      
+            </mat-card>
+        </div>
+     
+    </div>
+    
