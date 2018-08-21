@@ -3,7 +3,7 @@
       <mat-card>
           <mat-card-content>
               <form [formGroup]="form" (ngSubmit)="onSubmit()">
-                  <div class="text-center"><img alt="homepage" src="assets/images/logo-icon.png"><h4 class="m-t-0">Admin GEER</h4></div>
+                  <div class="text-center"><img alt="homepage" src="assets/images/logo-icon.png"><h4 class="m-t-0">Academia GEER</h4></div>
 
                   <div fxLayout="row" fxLayoutWrap="wrap">
                   
@@ -21,9 +21,9 @@
                                   </mat-form-field>
 
                           <mat-form-field>
-                              <input matInput   placeholder="Usuario" [formControl]="form.controls['login']"> 
+                              <input matInput   placeholder="Correo" [formControl]="form.controls['login']"> 
                           </mat-form-field> 
-                          <small *ngIf="form.controls['login'].hasError('required') && form.controls['login'].touched" class="text-danger support-text">Usuario requerido</small>
+                          <small *ngIf="form.controls['login'].hasError('required') && form.controls['login'].touched" class="text-danger support-text">Correo requerido</small>
                       </div>
                       <!-- col full-->    
                       <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
@@ -52,8 +52,8 @@
                 <div fxLayout="row"  fxLayoutWrap="wrap" class="text-center" (click)="recuperar()"><button mat-button color="warn">Olvidaste tu contraseña?</button></div>
                 
                 
-                <a href="https://daton.github.io/registro-profesor/">Registrarse Alumno</a><br>
-                <a href="https://daton.github.io/registro-alumno/">Registrarse Profesor</a>
+                <a href="https://daton.github.io/registro-alumno/" mat-button color="primary">Registrarse Alumno</a><br>
+                <a href="https://daton.github.io/registro-profesor/" mat-button color="accent">Registrarse Profesor</a>
            </mat-card-content>
       </mat-card>
   </div>

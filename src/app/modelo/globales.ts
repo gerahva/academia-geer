@@ -35,7 +35,7 @@ public static urlBase:string="https://geradmin.herokuapp.com/api";
   ];
 
   public static inf1_examenes:any=[
-   {nombre:'Diagnostico'},
+   {nombre:'Diagnóstico'},
    {nombre:'inf1-b1-internet'},
    {nombre:'inf1-b1-word'},
    {nombre:'inf1-b1-excel'},
@@ -43,7 +43,7 @@ public static urlBase:string="https://geradmin.herokuapp.com/api";
 
   ]
   public static inf3_examenes:any=[
-    {nombre:'Diagnostico'},
+    {nombre:'Diagnóstico'},
     {nombre:'inf3-b1-word'},
     {nombre:'inf3-b1-excel'}
    ]
@@ -54,13 +54,24 @@ public static urlBase:string="https://geradmin.herokuapp.com/api";
     {nombre:'Informática 3 bloque 3', url:"https://geducativoedi.com.mx/andamios/inf3-b3-alumno.zip"}
    ]
 
+ 
    public static inf1_andamios_alumnos:any=[
     {nombre:'Informática 1 bloque 1', url:"https://geducativoedi.com.mx/andamios/inf1-b1-alumno.zip"},
     {nombre:'Informática 1 bloque 2', url:"https://geducativoedi.com.mx/andamios/inf1-b2-alumno.zip"},
     {nombre:'Informática 1 bloque 3', url:"https://geducativoedi.com.mx/andamios/inf1-b3-alumno.zip"}
    ]
- 
- 
+
+   public static inf1_andamios_profesores:any=[
+    {nombre:'Informática 1 bloque 1', url:"https://geducativoedi.com.mx/andamios/inf1-b1-profesor.zip"},
+    {nombre:'Informática 1 bloque 2', url:"https://geducativoedi.com.mx/andamios/inf1-b2-profesor.zip"},
+    {nombre:'Informática 1 bloque 3', url:"https://geducativoedi.com.mx/andamios/inf1-b3-profesor.zip"}
+   ]
+   public static inf3_andamios_profesores:any=[
+    {nombre:'Informática 3 bloque 1', url:"https://geducativoedi.com.mx/andamios/inf3-b1-profesor.zip"},
+    {nombre:'Informática 3 bloque 2', url:"https://geducativoedi.com.mx/andamios/inf3-b2-profesor.zip"},
+    {nombre:'Informática 3 bloque 3', url:"https://geducativoedi.com.mx/andamios/inf3-b3-profesor.zip"}
+   ]
+
     
   }
 

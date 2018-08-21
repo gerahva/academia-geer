@@ -1,3 +1,55 @@
-<p>
-  andamios-profesores works!
-</p>
+<!-- ============================================================== -->
+<!-- Basic Card -->
+<!-- ============================================================== -->
+<mat-card>
+  <mat-card-content>
+    Andamios Para profesores
+   
+  </mat-card-content>
+</mat-card>
+<!-- ============================================================== -->
+<!-- Image Card row-->
+<!-- ============================================================== -->
+<div fxLayout="row" fxLayoutWrap="wrap">
+  <!-- Card column -->
+  <div fxFlex.gt-sm="33.33%" fxFlex="100"  *ngFor="let anda of andamiosInfo1">
+      <mat-card>
+          <mat-card-header>
+            <div mat-card-avatar><img src="assets/images/users/1.jpg" class="img-fluid img-circle"/></div>
+            <mat-card-title>{{materiaInfo1}}</mat-card-title>
+          <!--  <mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
+          </mat-card-header>
+          <img mat-card-image src="assets/images/andamios.jpg" alt="Imagenes">
+          <mat-card-content>
+             <p>
+               Oprime el botón para Descargar tu andamio de {{anda.nombre}}
+             </p>
+             <p></p>
+             <mat-card-actions>
+                <a mat-raised-button color="accent" [href]="anda.url">DESCARGAR</a>
+
+              </mat-card-actions>
+            </mat-card-content>      
+        </mat-card>
+  </div>
+  <div fxFlex.gt-sm="33.33%" fxFlex="100"  *ngFor="let anda of andamiosInfo3">
+    <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar><img src="assets/images/users/1.jpg" class="img-fluid img-circle"/></div>
+          <mat-card-title>{{materiaInfo3}}</mat-card-title>
+        <!--  <mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
+        </mat-card-header>
+        <img mat-card-image src="assets/images/andamios.jpg" alt="Imagenes">
+        <mat-card-content>
+           <p>
+             Oprime el botón para Descargar tu andamio de {{anda.nombre}}
+           </p>
+           <p></p>
+           <mat-card-actions>
+              <a mat-raised-button color="accent" [href]="anda.url">DESCARGAR</a>
+
+            </mat-card-actions>
+          </mat-card-content>      
+      </mat-card>
+</div>
+</div>

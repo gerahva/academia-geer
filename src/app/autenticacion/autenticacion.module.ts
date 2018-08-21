@@ -5,6 +5,7 @@ import {HttpClient} from '@angular/common/http'
 import { MatIconModule, MatCardModule, MatInputModule, MatCheckboxModule, MatButtonModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
 
 import { AutenticacionRoutes } from './autenticacacion.routing';
@@ -25,7 +26,8 @@ import { RecuperacionComponent } from './recuperacion/recuperacion.component';
     MatButtonModule,
     FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    [SweetAlert2Module.forRoot()]
   ],
   declarations: []
 })

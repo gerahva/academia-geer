@@ -92,7 +92,7 @@ let MENUITEMS2 = [
           {state: 'videos', name: 'Tus videos'},
           {state:'examenes', name:'Tus examenes'},
           {state:'andamios-alumnos',name:'Mis andamios'},
-          {state: 'button', name: 'Buttons'}
+       /*   {state: 'button', name: 'Buttons'}  */
           /*
           {state: 'cards', name: 'Cards'},
           {state: 'grid', name: 'Grid List'},
