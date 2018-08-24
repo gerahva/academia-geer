@@ -40,6 +40,7 @@ import { ExamenesComponent } from './examenes/examenes.component';
 import { AndamiosAlumnosComponent } from './andamios-alumnos/andamios-alumnos.component';
 import { ProfesoresComponent } from './profesores/profesores.component';
 import { AndamiosProfesoresComponent } from './andamios-profesores/andamios-profesores.component';
+import { ExamenesMaestrosComponent } from './examenes-maestros/examenes-maestros.component';
 
 @NgModule({
   imports: [
@@ -84,7 +85,8 @@ import { AndamiosProfesoresComponent } from './andamios-profesores/andamios-prof
     ExamenesComponent,
     AndamiosAlumnosComponent,
     ProfesoresComponent,
-    AndamiosProfesoresComponent  
+    AndamiosProfesoresComponent,
+    ExamenesMaestrosComponent  
   ]
 })
 

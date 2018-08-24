@@ -22,6 +22,7 @@ import { LoginComponent } from './autenticacion/login/login.component';
 import { RecuperacionComponent } from './autenticacion/recuperacion/recuperacion.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

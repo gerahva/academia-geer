@@ -1,0 +1,120 @@
+<!-- ============================================================== -->
+<!-- Basic Card -->
+<!-- ============================================================== -->
+<div fxLayout="row" fxLayoutWrap="wrap">
+<div fxFlex.gt-sm="100%" fxFlex="100">
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar><img src="assets/images/users/1.jpg" class="img-fluid img-circle"/></div>
+      <mat-card-title>Exámenes</mat-card-title>
+      <mat-card-subtitle>Exámenes profesores</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+       <p>
+         Selecciona un curso para  mostrar los exámenes.
+       </p>
+       <mat-card-actions>
+          <button mat-raised-button color="accent"(click)="visualizarInfo1()">Informática 1</button>
+          <button mat-raised-button color="primary"(click)="visualizarInfo3()">Informática 3</button>
+        </mat-card-actions>
+      </mat-card-content>      
+  </mat-card>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- Image Card row para informatia 1-->
+<!-- ============================================================== -->
+<div fxLayout="row" fxLayoutWrap="wrap" *ngIf="mostrarCatalogoInfo1">
+  <!-- Card column -->
+  <div fxFlex.gt-sm="33.33%" fxFlex="100"  *ngFor="let exa of examenesInfo1; let i=index">
+      <mat-card>
+          <mat-card-header>
+            <div mat-card-avatar><img src="assets/images/users/1.jpg" class="img-fluid img-circle"/></div>
+            <mat-card-title>{{exa.nombre}}</mat-card-title>
+          <!--  <mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
+          </mat-card-header>
+          <img mat-card-image src="assets/images/examenes.jpg" alt="Imagenes">
+          <mat-card-content>
+             <p>
+               Oprime el botón para visualizar el examen
+             </p>
+             <p></p>
+             <mat-card-actions>
+                <button mat-raised-button color="accent" (click)="mostrarExamen(exa.id)">VISUALIZAR</button>
+
+              </mat-card-actions>
+            </mat-card-content>      
+        </mat-card>
+  </div>
+</div>
+<!------------------------------------------------------------------------------------------------
+TERMINA LOS CARDS DE LOS EXAMENES INFORMATICA 1
+-------------------------------------------------------------------------------------------------->
+
+
+<!-- ============================================================== -->
+<!-- Image Card row para informatia 3-->
+<!-- ============================================================== -->
+<div fxLayout="row" fxLayoutWrap="wrap" *ngIf="mostrarCatalogoInfo3">
+  <!-- Card column -->
+  <div fxFlex.gt-sm="33.33%" fxFlex="100"  *ngFor="let exa of examenesInfo3; let i=index">
+      <mat-card>
+          <mat-card-header>
+            <div mat-card-avatar><img src="assets/images/users/1.jpg" class="img-fluid img-circle"/></div>
+            <mat-card-title>{{exa.nombre}}</mat-card-title>
+          <!--  <mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
+          </mat-card-header>
+          <img mat-card-image src="assets/images/examenes.jpg" alt="Imagenes">
+          <mat-card-content>
+             <p>
+               Oprime el botón para visualizar el examen
+             </p>
+             <p></p>
+             <mat-card-actions>
+                <button mat-raised-button color="accent" (click)="mostrarExamen(exa.id)">VISUALIZAR</button>
+
+              </mat-card-actions>
+            </mat-card-content>      
+        </mat-card>
+  </div>
+</div>
+<!------------------------------------------------------------------------------------------------
+TERMINA LOS CARDS DE LOS EXAMENES INFORMATICA 3
+-------------------------------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------------
+INICIA LA CIVILIZACION DE EL EXAMEN SELECCIONADO
+--------------------------------------------------------------------------------->
+<div class="card-body" *ngIf="puedeMostrarse">
+
+  <h2>Examen {{idExamen}}</h2>
+  
+<!--Iteramos todas las preguntas-->
+  <div   *ngFor="let preguntaActual of plantillaexamensito.preguntas;let i=index" >
+    
+    <br>
+ 
+    <h3>{{i+1}}.-{{preguntaActual.titulo}}</h3>
+
+ 
+    <mat-radio-group class="example-radio-group"  [(ngModel)]="selectedValue">
+        <div *ngFor="let opcion of preguntaActual.opciones; let i=index">
+          <mat-radio-button class="example-radio-button" value={{i}}  [checked]="sinChecar">
+            <span class="letrita">
+              {{opcion.titulo}}
+            </span>
+          </mat-radio-button>
+        </div>
+      </mat-radio-group>
+
+
+
+  
+
+   
+
+  </div><!--TERMINAN TODAS LAS PREGUNTAS-->
+
+
+</div>

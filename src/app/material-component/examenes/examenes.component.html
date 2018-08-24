@@ -3,7 +3,9 @@
 <!-- ============================================================== -->
 <mat-card>
   <mat-card-content>
-    Examenes
+    <mat-card-title class="text-center">GEER Exámenes</mat-card-title>
+    <mat-card-subtitle class="text-center">Exámenes de tu materia</mat-card-subtitle>
+    <p class="text-center">Selecciona un examen, se recomienda NO cancelar el examen una vez iniciado, exito!!</p>
    
   </mat-card-content>
 </mat-card>
@@ -26,7 +28,7 @@
              </p>
              <p></p>
              <mat-card-actions>
-                <button mat-raised-button color="accent" (click)="empezarExamen(i)">REALIZAR</button>
+                <button mat-raised-button color="accent" (click)="empezarExamen(exa.id)">REALIZAR</button>
 
               </mat-card-actions>
             </mat-card-content>      
@@ -43,7 +45,7 @@ TERMINA LOS CARDS DE LOS EXAMENES
 <h2>Lo siento, ya haz realizado el examen</h2>
 </div>
 
-<div class="card-body" *ngIf="mostrarExamenAcual  && !estaExamenDiagnosticoRealizado">
+<div class="card-body" *ngIf="puedeHacerExamen">
 
   <h3>¡Bienvenido!</h3>
  <p>Lee y contesta cada pregunta seleccionado la opción que consideres correcta</p>

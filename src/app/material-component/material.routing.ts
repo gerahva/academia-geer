@@ -22,6 +22,7 @@ import { SubirVideosComponent } from './subir-videos/subir-videos.component';
 import { ExamenesComponent } from './examenes/examenes.component';
 import { AndamiosAlumnosComponent } from './andamios-alumnos/andamios-alumnos.component';
 import { AndamiosProfesoresComponent } from './andamios-profesores/andamios-profesores.component';
+import { ExamenesMaestrosComponent } from './examenes-maestros/examenes-maestros.component';
 
 
 export const MaterialRoutes: Routes = [
@@ -47,6 +48,11 @@ export const MaterialRoutes: Routes = [
       {
         path:'andamios-profesores',
         component:AndamiosProfesoresComponent
+      },
+
+      {
+       path:'examenes-maestros',
+       component:ExamenesMaestrosComponent
       },
       {
         path: 'button',

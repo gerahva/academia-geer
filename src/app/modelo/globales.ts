@@ -35,17 +35,17 @@ public static urlBase:string="https://geradmin.herokuapp.com/api";
   ];
 
   public static inf1_examenes:any=[
-   {nombre:'Diagnóstico'},
-   {nombre:'inf1-b1-internet'},
-   {nombre:'inf1-b1-word'},
-   {nombre:'inf1-b1-excel'},
-   {nombre:'inf1-b1-power'},
+   {id:'inf1-diagnostico', nombre:' Inf 1, Diagnóstico'},
+   {id:'inf1-b1-internet', nombre:'Info 1, B1, Internet'},
+   {id:'inf1-b1-word', nombre:'Info 1, B1, Word' },
+   {id:'inf1-b1-excel', nombre: 'Info 1, B1, Excel'},
+   {id:'inf1-b1-power', nombre: 'Info 1, B1, Power Point'},
 
   ]
   public static inf3_examenes:any=[
-    {nombre:'Diagnóstico'},
-    {nombre:'inf3-b1-word'},
-    {nombre:'inf3-b1-excel'}
+    {id:'inf3-diagnostico', nombre:'Inf 3 Diagnóstico'},
+    {id:'inf3-b1-word', nombre:'Info 3, B1, Word'},
+    {id:'inf3-b1-excel', nombre:'Info 3, B1,Word'}
    ]
  
    public static inf3_andamios_alumnos:any=[
