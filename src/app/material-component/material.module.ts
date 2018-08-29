@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
+//import { BrowserModule } from '@angular/platform-browser';
 
 import { DemoMaterialModule} from '../demo-material-module';
 import { CdkTableModule } from '@angular/cdk/table';
@@ -41,10 +42,17 @@ import { AndamiosAlumnosComponent } from './andamios-alumnos/andamios-alumnos.co
 import { ProfesoresComponent } from './profesores/profesores.component';
 import { AndamiosProfesoresComponent } from './andamios-profesores/andamios-profesores.component';
 import { ExamenesMaestrosComponent } from './examenes-maestros/examenes-maestros.component';
+import { ReporteAlumnosComponent } from './reporte-alumnos/reporte-alumnos.component';
+
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { Ng2CompleterModule } from "ng2-completer";
+//import { DxDataGridModule, DxButtonModule} from 'devextreme-angular';
+//import{ DevExtremeModule } from 'devextreme-angular'; 
 
 @NgModule({
   imports: [
     CommonModule,
+   // BrowserModule,
     RouterModule.forChild(MaterialRoutes),
     DemoMaterialModule,
     HttpModule,
@@ -53,6 +61,11 @@ import { ExamenesMaestrosComponent } from './examenes-maestros/examenes-maestros
     FlexLayoutModule,
     CdkTableModule,
     FileUploadModule,
+    Ng2SmartTableModule,
+    Ng2CompleterModule,
+   // DxDataGridModule,
+    //DxButtonModule,
+   // DevExtremeModule,
     VgCoreModule,VgControlsModule,VgOverlayPlayModule,VgBufferingModule
   ],
   providers: [
@@ -86,7 +99,8 @@ import { ExamenesMaestrosComponent } from './examenes-maestros/examenes-maestros
     AndamiosAlumnosComponent,
     ProfesoresComponent,
     AndamiosProfesoresComponent,
-    ExamenesMaestrosComponent  
+    ExamenesMaestrosComponent,
+    ReporteAlumnosComponent  
   ]
 })
 

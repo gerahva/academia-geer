@@ -71,6 +71,7 @@ export class LoginComponent implements OnInit {
           Globales.profesor = this.profesor;
           Globales.esAlumno = false;
           Globales.profesor.clave = this.estatus.perfil.clave;
+          console.log("Este profesor: "+JSON.stringify(this.estatus));
           this.router.navigate(["/starter"], { skipLocationChange: true })
 
         }else{

@@ -1,0 +1,78 @@
+<div fxLayout="row" fxLayoutWrap="wrap">
+  <div fxFlex.gt-sm="100%" fxFlex="100">
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar><img src="assets/images/users/1.jpg" class="img-fluid img-circle"/></div>
+        <mat-card-title>Grupos y resultados de examenes</mat-card-title>
+        <mat-card-subtitle>Selecciona un curso</mat-card-subtitle>
+      </mat-card-header>
+  
+      <mat-card-content>
+         <p>
+           Selecciona un curso para  mostrar los exámenes.
+         </p>
+         <mat-card-actions>
+            <button mat-raised-button color="accent"(click)='verGrupoInfo(info1)'>Informática 1</button>
+            <button mat-raised-button color="primary"(click)='verGrupoInfo(info3)'>Informática 3</button>
+          </mat-card-actions>
+        </mat-card-content>      
+    </mat-card>
+</div>
+</div>
+
+
+
+<div fxLayout="row" fxLayoutWrap="wrap" *ngIf="mostrarGrupo">
+  <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+      <mat-card>
+          <mat-card-content> 
+              <mat-card-title></mat-card-title>
+              <div class="table-responsive">
+                  <mat-table #table [dataSource]="dataSource" matSort style="max-height: 500px; overflow:auto;">
+
+                      <!-- Position Column -->
+                      <ng-container matColumnDef="indice">
+                        <mat-header-cell  class="customWidthClass" *matHeaderCellDef mat-sort-header> No. </mat-header-cell>
+                        <mat-cell class="customWidthClass" *matCellDef="let element"> {{element.indice}} </mat-cell>
+                      </ng-container>
+
+                      <!-- Name Column -->
+                      <ng-container matColumnDef="nombreCompleto">
+                        <mat-header-cell style="width:120px;" *matHeaderCellDef mat-sort-header> Nombre </mat-header-cell>
+                        <mat-cell style="width:120px;" *matCellDef="let element"> {{element.nombreCompleto}} </mat-cell>
+                      </ng-container>
+
+                      <!-- Weight Column -->
+                      <ng-container matColumnDef="examenes.nombre">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Examen </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.examenes[1].nombre}} </mat-cell>
+                      </ng-container>
+
+                      <!-- Symbol Column -->
+                      <ng-container matColumnDef="examenes.calificacion">
+                        <mat-header-cell  style="width:20px;"  *matHeaderCellDef mat-sort-header>Calificacion </mat-header-cell>
+                        <mat-cell   style="width:20px;" *matCellDef="let element"> {{element.examenes[1].calificacion | number:'1.1-2'}} </mat-cell>
+                      </ng-container>
+ <!-- Symbol Column -->
+ <ng-container matColumnDef="plantel">
+  <mat-header-cell  style="width:20px;"  *matHeaderCellDef mat-sort-header>Plantel </mat-header-cell>
+  <mat-cell   style="width:20px;" *matCellDef="let element"> {{element.plantel}} </mat-cell>
+</ng-container>
+ <!-- Symbol Column -->
+ <ng-container matColumnDef="turno">
+  <mat-header-cell  style="width:20px;"  *matHeaderCellDef mat-sort-header>Turno </mat-header-cell>
+  <mat-cell   style="width:20px;" *matCellDef="let element"> {{element.turno}} </mat-cell>
+</ng-container>
+ <!-- Symbol Column -->
+ <ng-container matColumnDef="grupo">
+  <mat-header-cell  style="width:20px;"  *matHeaderCellDef mat-sort-header>Grupo </mat-header-cell>
+  <mat-cell   style="width:20px;" *matCellDef="let element"> {{element.grupo}} </mat-cell>
+</ng-container>
+                      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                    </mat-table>
+              </div>    
+          </mat-card-content>
+      </mat-card>
+  </div>
+</div>

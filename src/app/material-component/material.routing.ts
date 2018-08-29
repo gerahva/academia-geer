@@ -23,12 +23,17 @@ import { ExamenesComponent } from './examenes/examenes.component';
 import { AndamiosAlumnosComponent } from './andamios-alumnos/andamios-alumnos.component';
 import { AndamiosProfesoresComponent } from './andamios-profesores/andamios-profesores.component';
 import { ExamenesMaestrosComponent } from './examenes-maestros/examenes-maestros.component';
+import { ReporteAlumnosComponent } from './reporte-alumnos/reporte-alumnos.component';
 
 
 export const MaterialRoutes: Routes = [
   {
     path: '',
     children: [
+      {
+        path:'reporte-alumnos',
+        component:ReporteAlumnosComponent
+      },
       {
         path: 'subir-videos',
         component: SubirVideosComponent

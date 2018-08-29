@@ -40,13 +40,14 @@ export interface Menu {
         type: 'sub',
         icon: 'bubble_chart',
         badge: [
-            {type: 'red', value: '3'}
+            {type: 'red', value: '4'}
         ],
         children: [
   
             {state: 'videos', name: 'Mis Videos'},
             {state:'andamios-profesores',name:'Andamios'},
-            {state:'examenes-maestros',name:'Exámenes'}
+            {state:'examenes-maestros',name:'Exámenes'},
+            {state:'reporte-alumnos',name:'Mis grupos'}
             /*
             {state: 'button', name: 'Buttons'},
             {state: 'cards', name: 'Cards'},
