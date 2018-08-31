@@ -4,17 +4,21 @@ import { HttpClient } from '@angular/common/http'
 import { Alumno } from '../../modelo/alumno';
 import { Profesor } from '../../modelo/profesor';
 import { MatTableDataSource, MatSort } from '@angular/material';
+import { ExcelService } from '../excel.service';
+import { ReporteAlumno } from '../../modelo/reporte-alumno';
 
 
 
 @Component({
   selector: 'app-reporte-alumnos',
   templateUrl: './reporte-alumnos.component.html',
-  styles: ['reporte.css']
+  styles: ['reporte.css'],
+  providers: [ExcelService]
 })
 export class ReporteAlumnosComponent implements OnInit {
   profesor: Profesor = {}
   alumnos: Alumno[] = []
+  reporteAlumnos :ReporteAlumno[]=[]
   displayedColumns: any[]
   dataSource = new MatTableDataSource<Alumno>()
   info1 = 'Informatica 1'
@@ -22,11 +26,14 @@ export class ReporteAlumnosComponent implements OnInit {
 
   mostrarGrupo = false
   profesorNombreMateria: string
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient,private excelService: ExcelService) {
     this.profesor = Globales.profesor;
-
+    this.excelService=excelService;
   }
 
+  exportToExcel(event) {
+    this.excelService.exportAsExcelFile(this.reporteAlumnos, 'alumnos');
+  }
   ngOnInit() {
   }
 
@@ -40,6 +47,7 @@ export class ReporteAlumnosComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
   verGrupoInfo(valor: string) {
+  this.reporteAlumnos=[];
     //  valor='Informatica 1'
     this.profesorNombreMateria = valor;
     console.log(
@@ -79,8 +87,23 @@ export class ReporteAlumnosComponent implements OnInit {
       for (let i = 0; i < this.alumnos.length; i++) {
         this.alumnos[i].indice = indice;
         this.alumnos[i].nombreCompleto = this.alumnos[i].paterno + " " + this.alumnos[i].materno + " " + this.alumnos[i].nombre;
-        indice++;
+       
         this.mostrarGrupo = true
+
+        //Llenamos perote alumnos
+        this.reporteAlumnos.push({numero:indice,
+          nombre:this.alumnos[i].nombreCompleto,
+          examen:this.alumnos[i].examenes[1].nombre,
+    
+          calificacion:this.alumnos[i].examenes[1].calificacion,
+           plantel:this.alumnos[i].plantel,
+          turno:this.alumnos[i].turno,
+          grupo:this.alumnos[i].grupo
+
+
+        });
+         // incrementamos el indice de cada alumno a mostrarse en el ciclo
+        indice++;
       }
 
       console.log('maloooooo ' + JSON.stringify(this.alumnos));

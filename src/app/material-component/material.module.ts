@@ -46,6 +46,7 @@ import { ReporteAlumnosComponent } from './reporte-alumnos/reporte-alumnos.compo
 
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { Ng2CompleterModule } from "ng2-completer";
+import { ReporteGeneralComponent } from './reporte-general/reporte-general.component';
 //import { DxDataGridModule, DxButtonModule} from 'devextreme-angular';
 //import{ DevExtremeModule } from 'devextreme-angular'; 
 
@@ -100,7 +101,8 @@ import { Ng2CompleterModule } from "ng2-completer";
     ProfesoresComponent,
     AndamiosProfesoresComponent,
     ExamenesMaestrosComponent,
-    ReporteAlumnosComponent  
+    ReporteAlumnosComponent,
+    ReporteGeneralComponent  
   ]
 })
 

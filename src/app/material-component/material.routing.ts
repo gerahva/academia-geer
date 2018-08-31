@@ -24,12 +24,16 @@ import { AndamiosAlumnosComponent } from './andamios-alumnos/andamios-alumnos.co
 import { AndamiosProfesoresComponent } from './andamios-profesores/andamios-profesores.component';
 import { ExamenesMaestrosComponent } from './examenes-maestros/examenes-maestros.component';
 import { ReporteAlumnosComponent } from './reporte-alumnos/reporte-alumnos.component';
-
+import { ReporteGeneralComponent } from './reporte-general/reporte-general.component';
 
 export const MaterialRoutes: Routes = [
   {
     path: '',
     children: [
+      {
+        path:'reporte-general',
+        component:ReporteGeneralComponent
+      },
       {
         path:'reporte-alumnos',
         component:ReporteAlumnosComponent
