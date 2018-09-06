@@ -21,8 +21,8 @@ export class ReporteAlumnosComponent implements OnInit {
   reporteAlumnos :ReporteAlumno[]=[]
   displayedColumns: any[]
   dataSource = new MatTableDataSource<Alumno>()
-  info1 = 'Informatica 1'
-  info3 = 'Informatica 3'
+  info1 = 'inf1-diagnostico'
+  info3 = 'inf3-diagnostico'
 
   mostrarGrupo = false
   profesorNombreMateria: string
