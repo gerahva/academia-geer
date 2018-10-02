@@ -18,7 +18,7 @@ export class VideitosComponent implements OnInit {
   @ViewChild('videoPlayer') videoPlayer:any;
 
 
-videourl="http://static.videogular.com/assets/videos/videogular.mp4";
+videourl="https://geducativoedi.com.mx/intro.mp4";
 
   materias = [
     {value: 'info1', viewValue: 'Informática 1'},
@@ -29,14 +29,15 @@ videourl="http://static.videogular.com/assets/videos/videogular.mp4";
     {value: 'bloque1', viewValue: 'Bloque 1'},
     {value: 'bloque2', viewValue: 'Bloque 2'},
     {value: 'bloque3', viewValue: 'Bloque 3'},
-    {value: 'bloque4', viewValue: 'Bloque 4'}
+
   ];
   cursos = [
     {value: 'excel', viewValue: 'Excel'},
     {value: 'word', viewValue: 'Word'},
     {value: 'internet', viewValue: 'Internet'},
     {value: 'power', viewValue: 'Power Point'},
-    {value: 'programacion', viewValue: 'Programación'}
+    {value: 'programacion', viewValue: 'Programación'},
+    {value: 'scracht', viewValue: 'Programación Scratch'}
   ];
 
   constructor(private fb: FormBuilder, private router: Router) {}
@@ -50,6 +51,29 @@ videourl="http://static.videogular.com/assets/videos/videogular.mp4";
   }
 onPlayerReady(api:VgAPI){
 
+}
+
+cursoSeleccionado(event:any){
+  console.log("Seleccionaste algo "+event.value);
+  if(event.value=='info3'){
+    this.cursos = [
+      {value: 'excel', viewValue: 'Excel'},
+      {value: 'word', viewValue: 'Word'},
+
+      {value: 'programacion', viewValue: 'Programación'},
+      {value: 'scracht', viewValue: 'Programación Scratch'}
+    ];
+  }if(event.value=='info1'){
+    this.cursos = [
+      {value: 'excel', viewValue: 'Excel'},
+      {value: 'word', viewValue: 'Word'},
+      {value: 'internet', viewValue: 'Internet'},
+      {value: 'power', viewValue: 'Power Point'},
+      {value: 'programacion', viewValue: 'Programación'}
+    ];
+  
+  }
+  
 }
   onSubmit(){ 
     this.videourl="https://geducativoedi.com.mx/"+this.form.get("materia").value+"-"+

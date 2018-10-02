@@ -47,6 +47,7 @@ import { ReporteAlumnosComponent } from './reporte-alumnos/reporte-alumnos.compo
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { Ng2CompleterModule } from "ng2-completer";
 import { ReporteGeneralComponent } from './reporte-general/reporte-general.component';
+import { ResultadoBloque1Component } from './resultado-bloque1/resultado-bloque1.component';
 //import { DxDataGridModule, DxButtonModule} from 'devextreme-angular';
 //import{ DevExtremeModule } from 'devextreme-angular'; 
 
@@ -102,7 +103,8 @@ import { ReporteGeneralComponent } from './reporte-general/reporte-general.compo
     AndamiosProfesoresComponent,
     ExamenesMaestrosComponent,
     ReporteAlumnosComponent,
-    ReporteGeneralComponent  
+    ReporteGeneralComponent,
+    ResultadoBloque1Component  
   ]
 })
 

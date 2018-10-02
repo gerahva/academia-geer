@@ -1,30 +1,28 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Globales } from '../../modelo/globales';
-import { HttpClient } from '@angular/common/http'
-import { Alumno } from '../../modelo/alumno';
-import { Profesor } from '../../modelo/profesor';
-import { MatTableDataSource, MatSort } from '@angular/material';
 import { ExcelService } from '../excel.service';
+import { Profesor } from '../../modelo/profesor';
+import { Alumno } from '../../modelo/alumno';
 import { ReporteAlumno } from '../../modelo/reporte-alumno';
+import { MatTableDataSource, MatSort } from '@angular/material';
 
-
+import { Globales } from '../../modelo/globales';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-reporte-alumnos',
-  templateUrl: './reporte-alumnos.component.html',
-  styles: ['reporte.css'],
+  selector: 'app-resultado-bloque1',
+  templateUrl: './resultado-bloque1.component.html',
+  styleUrls: ['./resultado-bloque1.component.css'],
   providers: [ExcelService]
 })
-export class ReporteAlumnosComponent implements OnInit {
+export class ResultadoBloque1Component implements OnInit {
   profesor: Profesor = {}
-  estaCargando=false;
   alumnos: Alumno[] = []
   reporteAlumnos :ReporteAlumno[]=[]
   displayedColumns: any[]
   dataSource = new MatTableDataSource<Alumno>()
-  info1 = 'inf1-diagnostico'
-  info3 = 'inf3-diagnostico'
-
+  info1 = 'inf1-b1'
+  info3 = 'inf3-b1'
+estaCargando=false;
   mostrarGrupo = false
   profesorNombreMateria: string
   constructor(public http: HttpClient,private excelService: ExcelService) {
@@ -50,8 +48,8 @@ export class ReporteAlumnosComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
   verGrupoInfo(valor: string) {
-    this.estaCargando=true;
   this.reporteAlumnos=[];
+this.estaCargando=true;
     //  valor='Informatica 1'
     this.profesorNombreMateria = valor;
     console.log(
@@ -93,6 +91,17 @@ export class ReporteAlumnosComponent implements OnInit {
         this.alumnos[i].nombreCompleto = this.alumnos[i].paterno + " " + this.alumnos[i].materno + " " + this.alumnos[i].nombre;
        
         this.mostrarGrupo = true
+        let nombreExamenBuscado='';
+
+        let valorCalif;
+
+        //MY IMPORTANTE!!!! CHECAMOS EL NOMBRE DEL EXAMEN ANTES D AGREGARLO:
+      for(let examen of this.alumnos[i].examenes){
+     if(examen.nombre==valor){
+      nombreExamenBuscado=valor;
+       valorCalif=examen.calificacion;
+      }
+      }
 
         //Llenamos perote alumnos
         this.reporteAlumnos.push({numero:indice,
@@ -114,11 +123,11 @@ export class ReporteAlumnosComponent implements OnInit {
       this.dataSource = new MatTableDataSource<Alumno>(this.alumnos);
       this.dataSource.sort = this.sort;
       this.displayedColumns = ['indice', 'nombreCompleto', 'examenes.nombre', 'examenes.calificacion','clave', 'plantel', 'turno', 'grupo'];
-  this.estaCargando=false;
+
+this.estaCargando=false;
 
 
-
-    }, 1700);
+    }, 1800);
   }
 }
 

@@ -25,6 +25,7 @@ import { AndamiosProfesoresComponent } from './andamios-profesores/andamios-prof
 import { ExamenesMaestrosComponent } from './examenes-maestros/examenes-maestros.component';
 import { ReporteAlumnosComponent } from './reporte-alumnos/reporte-alumnos.component';
 import { ReporteGeneralComponent } from './reporte-general/reporte-general.component';
+import { ResultadoBloque1Component } from './resultado-bloque1/resultado-bloque1.component';
 
 export const MaterialRoutes: Routes = [
   {
@@ -33,6 +34,11 @@ export const MaterialRoutes: Routes = [
       {
         path:'reporte-general',
         component:ReporteGeneralComponent
+      },
+
+      {
+    path:'resultado-bloque1',
+    component:ResultadoBloque1Component
       },
       {
         path:'reporte-alumnos',

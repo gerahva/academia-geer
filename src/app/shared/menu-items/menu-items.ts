@@ -47,7 +47,8 @@ export interface Menu {
             {state: 'videos', name: 'Mis Videos'},
             {state:'andamios-profesores',name:'Andamios'},
             {state:'examenes-maestros',name:'Exámenes'},
-            {state:'reporte-alumnos',name:'Mis grupos'},
+            {state:'reporte-alumnos',name:'Resultado Diagnóstico'},
+            {state:'resultado-bloque1', name:"Resultado Bloque 1"}
            // {state:'reporte-general',name:'Reporte General'}
             /*
             {state: 'button', name: 'Buttons'},

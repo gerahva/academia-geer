@@ -3,6 +3,7 @@ import {Materia} from './materia';
 import {Examen} from './examen';
 export interface Alumno {
     indice?:number
+    id?:string
     nombreCompleto?:string
  clave?:string;
 nombre?:string;

@@ -82,7 +82,9 @@ export class ExamenesComponent implements OnInit {
  
   }
 
-
+/***************************************************
+ EMPEZAR EXAMEN
+**************************************************/
 
   empezarExamen(id: string) {
     //NOmbre de la materia

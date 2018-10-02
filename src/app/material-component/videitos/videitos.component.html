@@ -14,8 +14,8 @@
                   <mat-form-field>
                     
 
-                      <mat-select  matInput placeholder="Selecciona la materia"  [formControl]="form.controls['materia']" >
-                        <mat-option *ngFor="let mate of materias" [value]="mate.value">
+                      <mat-select  matInput placeholder="Selecciona la materia"  (selectionChange)="cursoSeleccionado($event)"  [formControl]="form.controls['materia']" >
+                        <mat-option *ngFor="let mate of materias" [value]="mate.value"  >
                           {{ mate.viewValue }}
                         </mat-option>
                       </mat-select>
@@ -80,7 +80,7 @@
             <!--  <img mat-card-image src="assets/images/big/img4.jpg" alt="Photo of a Shiba Inu">-->
               <mat-card-content>
                   <vg-player  [hidden]="ocultar">
-                      <video [vgMedia]="media" #media id="singleVideo" #videoPlayer  source [src]="videourl" preload="auto" controls style="width: 100%;height: auto;">
+                      <video [vgMedia]="media" autoplay #media id="singleVideo" #videoPlayer  source [src]="videourl" preload="auto" controls style="width: 100%;height: auto;">
                        
                       </video>
                   </vg-player>
