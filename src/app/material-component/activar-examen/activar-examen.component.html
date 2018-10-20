@@ -1,0 +1,40 @@
+<mat-card>
+  <mat-card-content>
+    <div class="text-center"><img alt="homepage" src="assets/images/logo-icon.png">
+      <h4 class="m-t-0">Activar Examen</h4>
+    </div>
+    <mat-card-subtitle>Proporciona la siguiente información</mat-card-subtitle>
+
+
+    <mat-form-field>
+      <mat-select placeholder="Selecciona el curso y el bloque" [(ngModel)]="materia">
+        <mat-option *ngFor="let mate of materias" [value]="mate.value">
+          {{ mate.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+
+    <mat-form-field>
+      <mat-select placeholder="Selecciona un bloque" [(ngModel)]="bloque">
+        <mat-option *ngFor="let blo of bloques" [value]="blo.value">
+          {{ blo.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Clave del alumno"   [(ngModel)]="claveAlumno">
+      </mat-form-field>
+      <mat-card-actions>
+       <button mat-raised-button color="primary"  (click)="buscarAlumno()">Buscar alumno</button>
+       <button mat-raised-button color="success"  (click)="borrarExamen()"   [disabled]="estaDesactivado">Activar Examen</button>
+       <p>{{alumno.nombre}}, {{alumno.email}}, {{alumno.clave}}</p>
+      </mat-card-actions>
+      
+
+
+
+
+  </mat-card-content>
+</mat-card>

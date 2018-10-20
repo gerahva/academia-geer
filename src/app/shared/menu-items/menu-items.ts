@@ -40,7 +40,7 @@ export interface Menu {
         type: 'sub',
         icon: 'bubble_chart',
         badge: [
-            {type: 'red', value: '4'}
+            {type: 'red', value: '6'}
         ],
         children: [
   
@@ -48,7 +48,9 @@ export interface Menu {
             {state:'andamios-profesores',name:'Andamios'},
             {state:'examenes-maestros',name:'Exámenes'},
             {state:'reporte-alumnos',name:'Resultado Diagnóstico'},
-            {state:'resultado-bloque1', name:"Resultado Bloque 1"}
+            {state:'resultado-bloque1', name:"Resultado Bloque 1"},
+            {state:'resultado-bloque2', name:"Resultado Bloque 2"},
+            {state:'activar-examen', name:'Activar examenes'}
            // {state:'reporte-general',name:'Reporte General'}
             /*
             {state: 'button', name: 'Buttons'},

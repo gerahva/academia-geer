@@ -9,12 +9,12 @@ import { Globales } from "../../modelo/globales";
 import { HttpClient } from "@angular/common/http";
 
 @Component({
-  selector: "app-resultado-bloque1",
-  templateUrl: "./resultado-bloque1.component.html",
-  styleUrls: ["./resultado-bloque1.component.css"],
+  selector: "app-resultado-bloque2",
+  templateUrl: "./resultado-bloque2.component.html",
+  styleUrls: ["./resultado-bloque2.component.css"],
   providers: [ExcelService]
 })
-export class ResultadoBloque1Component implements OnInit {
+export class ResultadoBloque2Component implements OnInit {
   @ViewChild(MatPaginator)
   paginator: MatPaginator;
   @ViewChild(MatSort)
@@ -25,8 +25,8 @@ export class ResultadoBloque1Component implements OnInit {
   reporteAlumnos: ReporteAlumno[] = [];
   displayedColumns: any[];
   dataSource = new MatTableDataSource<Alumno>();
-  info1 = "inf1-b1";
-  info3 = "inf3-b1";
+  info1 = "inf1-b2";
+  info3 = "inf3-b2";
   estaCargando = false;
   mostrarGrupo = false;
   profesorNombreMateria: string;
