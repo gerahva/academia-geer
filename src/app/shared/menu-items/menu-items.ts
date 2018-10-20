@@ -36,22 +36,19 @@ export interface Menu {
     }, 
     {
         state: 'material',
-        name: 'Contenido',
+        name: 'Herramientas',
         type: 'sub',
-        icon: 'bubble_chart',
+        icon: 'computer',
         badge: [
-            {type: 'red', value: '8'}
+            {type: 'red', value: '5'}
         ],
         children: [
             {state:'perfil',name:'Mi Perfil'},
             {state:'perfil-alumno',name:'Perfil alumnos'},
             {state: 'videos', name: 'Mis Videos'},
             {state:'andamios-profesores',name:'Andamios'},
-            {state:'examenes-maestros',name:'Exámenes'},
-            {state:'reporte-alumnos',name:'Resultado Diagnóstico'},
-            {state:'resultado-bloque1', name:"Resultado Bloque 1"},
-            {state:'resultado-bloque2', name:"Resultado Bloque 2"},
-            {state:'activar-examen', name:'Activar examenes'}
+            {state:'examenes-maestros',name:'Ver Examenes'},
+     
            // {state:'reporte-general',name:'Reporte General'}
             /*
             {state: 'button', name: 'Buttons'},
@@ -74,7 +71,23 @@ export interface Menu {
             
             */
         ]
-    } 
+    },
+    {
+    state: 'material',
+    name: 'Evaluaciones',
+    type: 'sub',
+    icon: 'contacts',
+    badge: [
+        {type: 'red', value: '4'}
+    ],
+    children: [
+
+        {state:'reporte-alumnos',name:'Resultado Diagnóstico'},
+        {state:'resultado-bloque1', name:"Resultado Bloque 1"},
+        {state:'resultado-bloque2', name:"Resultado Bloque 2"},
+        {state:'activar-examen', name:'Activar examenes'}
+    ]
+  } 
 ];
 
 
