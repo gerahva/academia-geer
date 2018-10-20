@@ -40,10 +40,11 @@ export interface Menu {
         type: 'sub',
         icon: 'bubble_chart',
         badge: [
-            {type: 'red', value: '7'}
+            {type: 'red', value: '8'}
         ],
         children: [
             {state:'perfil',name:'Mi Perfil'},
+            {state:'perfil-alumno',name:'Perfil alumnos'},
             {state: 'videos', name: 'Mis Videos'},
             {state:'andamios-profesores',name:'Andamios'},
             {state:'examenes-maestros',name:'Exámenes'},
@@ -95,7 +96,7 @@ let MENUITEMS2 = [
       ],
       children: [
        /* {state:'subir-videos',name:'Subir videos2'},  */
-          {state:'perfil-alumno',name:'Mi Perfil'},
+      
           {state: 'videos', name: 'Tus videos'},
           {state:'examenes', name:'Tus examenes'},
           {state:'andamios-alumnos',name:'Mis andamios'},
