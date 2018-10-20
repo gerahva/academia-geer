@@ -28,11 +28,24 @@ import { ReporteGeneralComponent } from "./reporte-general/reporte-general.compo
 import { ResultadoBloque1Component } from "./resultado-bloque1/resultado-bloque1.component";
 import { ActivarExamenComponent } from "./activar-examen/activar-examen.component";
 import { ResultadoBloque2Component } from "./resultado-bloque2/resultado-bloque2.component";
+import { MiPerfilComponent } from "./mi-perfil/mi-perfil.component";
+import { PerfilAlumnoComponent } from "./perfil-alumno/perfil-alumno.component";
 
 export const MaterialRoutes: Routes = [
   {
     path: "",
     children: [
+
+ {
+   path:'perfil',
+   component:MiPerfilComponent
+
+ },
+ {
+  path:'perfil-alumno',
+  component:PerfilAlumnoComponent
+ },
+
       {
         path: "reporte-general",
         component: ReporteGeneralComponent

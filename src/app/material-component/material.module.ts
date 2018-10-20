@@ -50,6 +50,8 @@ import { ReporteGeneralComponent } from './reporte-general/reporte-general.compo
 import { ResultadoBloque1Component } from './resultado-bloque1/resultado-bloque1.component';
 import { ActivarExamenComponent } from './activar-examen/activar-examen.component';
 import { ResultadoBloque2Component } from './resultado-bloque2/resultado-bloque2.component';
+import { MiPerfilComponent } from './mi-perfil/mi-perfil.component';
+import { PerfilAlumnoComponent } from './perfil-alumno/perfil-alumno.component';
 //import { DxDataGridModule, DxButtonModule} from 'devextreme-angular';
 //import{ DevExtremeModule } from 'devextreme-angular'; 
 
@@ -108,7 +110,9 @@ import { ResultadoBloque2Component } from './resultado-bloque2/resultado-bloque2
     ReporteGeneralComponent,
     ResultadoBloque1Component,
     ActivarExamenComponent,
-    ResultadoBloque2Component  
+    ResultadoBloque2Component,
+    MiPerfilComponent,
+    PerfilAlumnoComponent  
   ]
 })
 
