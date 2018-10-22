@@ -1,3 +1,39 @@
-<p>
-  perfil-alumno works!
-</p>
+<mat-card>
+  <mat-card-content>
+    <div class="text-center"><img alt="homepage" src="assets/images/logo-icon.png">
+      <h4 class="m-t-0">Modificar datos del alumno</h4>
+    </div>
+    <mat-card-subtitle>Proporciona la clave del alumno</mat-card-subtitle>
+
+
+
+
+    <mat-form-field>
+      <input matInput placeholder="Clave del alumno" [(ngModel)]="claveAlumno">
+    </mat-form-field>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="buscarAlumno()">Buscar alumno</button>
+
+      <p>{{alumno.nombre}}, {{alumno.email}}, {{alumno.clave}}</p>
+
+    </mat-card-actions>
+
+    <!-- Formulario para cambiar a los alumnos-->
+    <div *ngIf="!estaDesactivado">
+    <mat-form-field>
+      <input matInput placeholder="Correo del alumno" [(ngModel)]="email">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="number" matInput placeholder="Grupo del alumno" [(ngModel)]="grupo">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Password del alumno" [(ngModel)]="password">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="actualizarAlumno()">Actualizar alumno</button>
+    </div>
+
+
+  </mat-card-content>
+</mat-card>
