@@ -3,7 +3,20 @@
       <div class="text-center"><img alt="homepage" src="assets/images/logo-icon.png">
         <h4 class="m-t-0">Modificar mi perfil</h4>
       </div>
-      <mat-card-subtitle>En construcción</mat-card-subtitle>
-      <p>Muy pronto estará activado el cambio del perfil del profesor </p>
+      <mat-card-subtitle>Modifica los datos deseados</mat-card-subtitle>
+     
+    <!-- Formulario para cambiar a los alumnos-->
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Correo " [(ngModel)]="email">
+      </mat-form-field>
+  
+    
+      <mat-form-field>
+        <input matInput placeholder="Password" [(ngModel)]="password">
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="actualizarProfesor()">Actualizar perfil</button>
+      </div>
+  
     </mat-card-content>
 </mat-card>  

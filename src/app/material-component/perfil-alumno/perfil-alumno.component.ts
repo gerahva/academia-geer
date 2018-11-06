@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Estatus } from "../../modelo/estatus";
 import { Globales } from "../../modelo/globales";
 import swal from "sweetalert2";
@@ -7,6 +7,7 @@ import { HttpClient } from "@angular/common/http";
 
 import { Alumno } from "../../modelo/alumno";
 import { Profesor } from "../../modelo/profesor";
+import { MatPaginator, MatSort } from '@angular/material';
 
 @Component({
   selector: 'app-perfil-alumno',
@@ -14,6 +15,7 @@ import { Profesor } from "../../modelo/profesor";
   styleUrls: ['./perfil-alumno.component.css']
 })
 export class PerfilAlumnoComponent implements OnInit {
+
 
   claveAlumno:string
   email:string

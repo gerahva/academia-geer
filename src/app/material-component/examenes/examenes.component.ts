@@ -47,8 +47,10 @@ export class ExamenesComponent implements OnInit {
   estaExamenInfo2ExcelB2Realizado: boolean = false;
   estaExamenInfo2PowerB2Realizado: boolean = false;
   plantillaexamensito: Plantillaexamen = {};
+  examenAEnviar:Plantillaexamen={};
 
   public preguntas: Pregunta[];
+  
   public numeroPreguntas: number;
   public indicePegunta: number = 0;
   public contadorPregunta: number = 1;
@@ -99,6 +101,9 @@ export class ExamenesComponent implements OnInit {
     console.log("La es esta  url" + estaUrl);
     this.http.get<Plantillaexamen>(estaUrl).subscribe(respuesta => {
       this.plantillaexamensito = respuesta;
+   //Asignamos a la plantilla del examen la variable examernAEnviar para igualarlos
+ this.examenAEnviar=respuesta;
+      
     });
 
     setTimeout(() => {
@@ -128,7 +133,7 @@ export class ExamenesComponent implements OnInit {
           this.plantillaexamensito.preguntas.length
       );
       console.log("El examen es " + JSON.stringify(this.plantillaexamensito));
-    }, 1500);
+    }, 1800);
   }
 
   //Primro checamos si el alumno puede hacer este examen, es decir vemos si ya existe en su ristro
@@ -173,7 +178,12 @@ export class ExamenesComponent implements OnInit {
   }
 
   siguiente() {
-    //Checamos antes   si es correcta ANTES DE PASAR A LA OTRA
+    //Checamos antes   si es correcta ANTES DE PASAR A LA OTRA, PERO ANTES VEMOS LA SELECCIONADA Y LA PONEMOS
+    //AL EXAMEN examenAEnviar
+     
+   
+
+
     if (
       this.plantillaexamensito.preguntas[this.indicePegunta].opciones[
         this.selectedValue
@@ -182,6 +192,19 @@ export class ExamenesComponent implements OnInit {
       console.log("CORRECTA");
       this.buenas++;
     } else console.log("INCORRECTA");
+
+
+    //AQUI AGREGAMOS A LA PLANTILLA EXAMEN A ENVIAR EL EXMANN QUE ENVIAREMOS
+
+
+  this.examenAEnviar.preguntas[this.indicePegunta].opciones[this.selectedValue]=  this.plantillaexamensito.preguntas[this.indicePegunta].opciones[
+      this.selectedValue
+    ]
+
+  
+
+    this.examenAEnviar.preguntas[this.indicePegunta].opciones[this.selectedValue].acierto=true;
+
     //iNCREMENTAMOS LA OTRA A LA  QUE SE VA A PASAR SIGUIENTE
     this.indicePegunta++;
     console.log("Valor antes de pasar a la otra...." + this.selectedValue);
@@ -194,6 +217,11 @@ export class ExamenesComponent implements OnInit {
       ];
     } else {
       //Ya que no hay mas preguntas!!!???
+   //ya esta la clave prepagara del alumno con el id del examen
+   //sedssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+      this.examenAEnviar.id=this.plantillaexamensito.id+"-"+this.alumno.clave;
+
+
       this.mostrar = true;
       this.ocultarResultado = false;
       this.mostrarExamenAcual = false;
@@ -229,6 +257,8 @@ export class ExamenesComponent implements OnInit {
         .subscribe(respuesta => (this.estatus = respuesta));
       setTimeout(() => {
         console.log("Mensaje del servidor" + this.estatus.success);
+        console.log("EXAMEN A ENVIARSEEEEE  "+JSON.stringify(this.examenAEnviar));
+
       }, 1200);
     }
   }

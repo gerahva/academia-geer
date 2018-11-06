@@ -3,7 +3,7 @@ import { Globales } from '../../modelo/globales';
 import { HttpClient } from '@angular/common/http'
 import { Alumno } from '../../modelo/alumno';
 import { Profesor } from '../../modelo/profesor';
-import { MatTableDataSource, MatSort } from '@angular/material';
+import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { ExcelService } from '../excel.service';
 import { ReporteAlumno } from '../../modelo/reporte-alumno';
 
@@ -20,10 +20,15 @@ export class ReporteAlumnosComponent implements OnInit {
   estaCargando=false;
   alumnos: Alumno[] = []
   reporteAlumnos :ReporteAlumno[]=[]
-  displayedColumns: any[]
+
   dataSource = new MatTableDataSource<Alumno>()
   info1 = 'inf1-diagnostico'
   info3 = 'inf3-diagnostico'
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
+  displayedColumns = ['indice', 'nombreCompleto', 'examenes.nombre', 'examenes.calificacion','clave', 'plantel', 'turno', 'grupo'];
 
   mostrarGrupo = false
   profesorNombreMateria: string
@@ -40,7 +45,6 @@ export class ReporteAlumnosComponent implements OnInit {
     
   }
 
-  @ViewChild(MatSort) sort: MatSort;
 
   /**
    * Set the sort after the view init since this component will
@@ -112,13 +116,20 @@ export class ReporteAlumnosComponent implements OnInit {
 
       console.log('maloooooo ' + JSON.stringify(this.alumnos));
       this.dataSource = new MatTableDataSource<Alumno>(this.alumnos);
+      this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-      this.displayedColumns = ['indice', 'nombreCompleto', 'examenes.nombre', 'examenes.calificacion','clave', 'plantel', 'turno', 'grupo'];
+
   this.estaCargando=false;
 
 
 
     }, 1700);
+  }
+
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
   }
 }
 
