@@ -7,6 +7,7 @@ import { HttpClient } from "@angular/common/http";
 
 import { Alumno } from "../../modelo/alumno";
 import { Profesor } from "../../modelo/profesor";
+import { Http, ResponseContentType } from '@angular/http';
 
 @Component({
   selector: 'app-activar-examen',
@@ -34,7 +35,7 @@ alumno:Alumno={};
     {value: 'b3', viewValue: 'Bloque 3'},
   
   ];
-  constructor(public http:HttpClient) { }
+  constructor(public http:HttpClient, public http2:Http) { }
 
   ngOnInit() {
   }
@@ -65,6 +66,10 @@ setTimeout(() => {
 
   }, 1500);
 }
+revision(){
+ // window.location.h= 'http://geducativoedi.com.mx/topa.pdf'
+  window.open('http://geducativoedi.com.mx/topa.pdf', 'Download');  
 
+}
 
 }

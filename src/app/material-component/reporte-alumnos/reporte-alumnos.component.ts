@@ -6,7 +6,7 @@ import { Profesor } from '../../modelo/profesor';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { ExcelService } from '../excel.service';
 import { ReporteAlumno } from '../../modelo/reporte-alumno';
-
+import { Http, ResponseContentType } from '@angular/http';
 
 
 @Component({
@@ -32,7 +32,7 @@ export class ReporteAlumnosComponent implements OnInit {
 
   mostrarGrupo = false
   profesorNombreMateria: string
-  constructor(public http: HttpClient,private excelService: ExcelService) {
+  constructor(public http: HttpClient,private excelService: ExcelService, public http2:Http) {
     this.profesor = Globales.profesor;
     this.excelService=excelService;
   }
