@@ -252,14 +252,18 @@ export class ExamenesComponent implements OnInit {
       this.mostrarCatalogo = true;
 
       //Enviamos a travez de http
-      this.http
-        .post<Estatus>(Globales.urlBase + "/alumno/examen", this.alumno)
-        .subscribe(respuesta => (this.estatus = respuesta));
+     // this.http
+      //  .post<Estatus>(Globales.urlBase + "/alumno/examen", this.alumno)
+      //  .subscribe(respuesta => (this.estatus = respuesta));
+
+
+      //Activamos la 
+      this.http.post<Estatus>('http://localhost:8080/api/examenso', this.examenAEnviar).subscribe(res=>{this.estatus=res})
       setTimeout(() => {
         console.log("Mensaje del servidor" + this.estatus.success);
         console.log("EXAMEN A ENVIARSEEEEE  "+JSON.stringify(this.examenAEnviar));
 
-      }, 1200);
+      }, 1600);
     }
   }
 
