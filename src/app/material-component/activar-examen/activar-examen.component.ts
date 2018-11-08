@@ -3,11 +3,12 @@ import { Estatus } from "../../modelo/estatus";
 import { Globales } from "../../modelo/globales";
 import swal from "sweetalert2";
 
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 import { Alumno } from "../../modelo/alumno";
 import { Profesor } from "../../modelo/profesor";
 import { Http, ResponseContentType } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-activar-examen',
@@ -68,8 +69,20 @@ setTimeout(() => {
 }
 revision(){
  // window.location.h= 'http://geducativoedi.com.mx/topa.pdf'
-  window.open('http://geducativoedi.com.mx/topa.pdf', 'Download');  
 
+ 
+  window.open('https://geducativoedi.com.mx/topa.pdf', 'Download');  
+  
+
+
+
+}
+
+geto(){
+  console.log("malo");
+  let headers = new HttpHeaders();
+  headers = headers.set('Accept', 'application/pdf');
+  return this.http.get('https://geducativoedi.com.mx/topa.pdf', { headers: headers, responseType: 'blob' });
 }
 
 }

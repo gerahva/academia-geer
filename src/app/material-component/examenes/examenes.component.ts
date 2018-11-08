@@ -258,7 +258,7 @@ export class ExamenesComponent implements OnInit {
 
 
       //Activamos la 
-      this.http.post<Estatus>(Globales.urlBase+'/examenso', this.examenAEnviar).subscribe(res=>{this.estatus=res})
+      this.http.post<Estatus>('https://daton.herokuapp.com/api/examenso', this.examenAEnviar).subscribe(res=>{this.estatus=res})
       setTimeout(() => {
         console.log("Mensaje del servidor" + this.estatus.success);
         console.log("EXAMEN A ENVIARSEEEEE  "+JSON.stringify(this.examenAEnviar));
