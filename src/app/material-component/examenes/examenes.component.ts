@@ -271,7 +271,7 @@ export class ExamenesComponent implements OnInit {
     var puede: boolean;
     puede = true;
     console.log(
-      "Checar si puede hacer examen de un total de  " + alumno.examenes.length
+      "Checar si puede hacer examen de muchos  " + alumno.examenes.length
     );
     for (var exa of alumno.examenes) {
       console.log(
