@@ -30,6 +30,7 @@ import { ActivarExamenComponent } from "./activar-examen/activar-examen.componen
 import { ResultadoBloque2Component } from "./resultado-bloque2/resultado-bloque2.component";
 import { MiPerfilComponent } from "./mi-perfil/mi-perfil.component";
 import { PerfilAlumnoComponent } from "./perfil-alumno/perfil-alumno.component";
+import { ResultadoBloque3Component } from "./resultado-bloque3/resultado-bloque3.component";
 
 export const MaterialRoutes: Routes = [
   {
@@ -58,6 +59,10 @@ export const MaterialRoutes: Routes = [
       {
         path: "resultado-bloque2",
         component: ResultadoBloque2Component
+      },
+      {
+      path:'resultado-bloque3',
+      component:ResultadoBloque3Component
       },
 
       {

@@ -52,6 +52,7 @@ import { ActivarExamenComponent } from './activar-examen/activar-examen.componen
 import { ResultadoBloque2Component } from './resultado-bloque2/resultado-bloque2.component';
 import { MiPerfilComponent } from './mi-perfil/mi-perfil.component';
 import { PerfilAlumnoComponent } from './perfil-alumno/perfil-alumno.component';
+import { ResultadoBloque3Component } from './resultado-bloque3/resultado-bloque3.component';
 //import { DxDataGridModule, DxButtonModule} from 'devextreme-angular';
 //import{ DevExtremeModule } from 'devextreme-angular'; 
 
@@ -112,7 +113,8 @@ import { PerfilAlumnoComponent } from './perfil-alumno/perfil-alumno.component';
     ActivarExamenComponent,
     ResultadoBloque2Component,
     MiPerfilComponent,
-    PerfilAlumnoComponent  
+    PerfilAlumnoComponent,
+    ResultadoBloque3Component  
   ]
 })
 
