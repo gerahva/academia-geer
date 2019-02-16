@@ -9,13 +9,15 @@ import { Globales } from '../../modelo/globales';
 export class AndamiosProfesoresComponent implements OnInit {
   andamiosInfo1:any[]
   andamiosInfo3:any[]
-  materiaInfo1:string='Informatica 1'
-  materiaInfo3:string='Informatica 3'
+  andamiosInfo2:any[]
+  andamiosInfo4:any[]
+  materiaInfo2:string='Informatica 2'
+  materiaInfo4:string='Informatica 4'
   constructor() { }
 
   ngOnInit() {
-    this.andamiosInfo1=Globales.inf1_andamios_profesores;
-this.andamiosInfo3=Globales.inf3_andamios_profesores;
+    this.andamiosInfo2=Globales.inf2_andamios_profesores;
+this.andamiosInfo4=Globales.inf4_andamios_profesores;
   }
 
 }

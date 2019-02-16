@@ -27,6 +27,9 @@ export class ResultadoBloque1Component implements OnInit {
   dataSource = new MatTableDataSource<Alumno>();
   info1 = "inf1-b1";
   info3 = "inf3-b1";
+
+  info2 = "inf2-b1";
+  info4 = "inf4-b1";
   estaCargando = false;
   mostrarGrupo = false;
   profesorNombreMateria: string;

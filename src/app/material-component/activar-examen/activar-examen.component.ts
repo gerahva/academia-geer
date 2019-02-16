@@ -25,8 +25,8 @@ estatus:Estatus={}
 alumno:Alumno={};
 
   materias = [
-    {value: 'inf1', viewValue: 'Informática 1'},
-    {value: 'inf3', viewValue: 'Informática 3'},
+    {value: 'inf2', viewValue: 'Informática 2'},
+    {value: 'inf4', viewValue: 'Informática 4'},
   
   ];
   bloques = [

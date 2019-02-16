@@ -40,13 +40,14 @@ export interface Menu {
         type: 'sub',
         icon: 'computer',
         badge: [
-            {type: 'red', value: '5'}
+            {type: 'red', value: '6'}
         ],
         children: [
             {state:'perfil',name:'Mi Perfil'},
             {state:'perfil-alumno',name:'Perfil alumnos'},
             {state: 'videos', name: 'Mis Videos'},
             {state:'andamios-profesores',name:'Andamios'},
+            {state:'andamios-profesoralumnos', name:'Andamios alumnos'},
             {state:'examenes-maestros',name:'Ver Examenes'},
      
            // {state:'reporte-general',name:'Reporte General'}
@@ -78,10 +79,10 @@ export interface Menu {
     type: 'sub',
     icon: 'contacts',
     badge: [
-        {type: 'red', value: '4'}
+        {type: 'red', value: '5'}
     ],
     children: [
-
+        {state:'alumnos-alta', name:'Alumnos registrados'},
         {state:'reporte-alumnos',name:'Resultado Diagnóstico'},
         {state:'resultado-bloque1', name:"Resultado Bloque 1"},
         {state:'resultado-bloque2', name:"Resultado Bloque 2"},

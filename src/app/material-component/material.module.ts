@@ -52,6 +52,9 @@ import { ActivarExamenComponent } from './activar-examen/activar-examen.componen
 import { ResultadoBloque2Component } from './resultado-bloque2/resultado-bloque2.component';
 import { MiPerfilComponent } from './mi-perfil/mi-perfil.component';
 import { PerfilAlumnoComponent } from './perfil-alumno/perfil-alumno.component';
+import { ReporteAlumnosGeneralComponent } from './reporte-alumnos-general/reporte-alumnos-general.component';
+import { ReporteAlumnosgeneralComponent } from './reporte-alumnosgeneral/reporte-alumnosgeneral.component';
+import { AndamiosProfesoralumnoComponent } from './andamios-profesoralumno/andamios-profesoralumno.component';
 //import { DxDataGridModule, DxButtonModule} from 'devextreme-angular';
 //import{ DevExtremeModule } from 'devextreme-angular'; 
 
@@ -112,7 +115,10 @@ import { PerfilAlumnoComponent } from './perfil-alumno/perfil-alumno.component';
     ActivarExamenComponent,
     ResultadoBloque2Component,
     MiPerfilComponent,
-    PerfilAlumnoComponent  
+    PerfilAlumnoComponent,
+    ReporteAlumnosGeneralComponent,
+    ReporteAlumnosgeneralComponent,
+    AndamiosProfesoralumnoComponent  
   ]
 })
 

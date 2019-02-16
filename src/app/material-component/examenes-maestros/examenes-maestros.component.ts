@@ -12,8 +12,16 @@ import swal from 'sweetalert2'
 export class ExamenesMaestrosComponent implements OnInit {
 mostrarCatalogoInfo1=false;
 mostrarCatalogoInfo3=false;
+
+mostrarCatalogoInfo2=false;
+mostrarCatalogoInfo4=false
+
 examenesInfo1=[]
 examenesInfo3=[]
+examenesInfo2=[]
+examenesInfo4=[]
+
+
 idExamen:string;
 mostrarExamenAcual: boolean = false;
 puedeMostrarse=false;
@@ -30,21 +38,45 @@ selectedValue: string;
 this.examenesInfo1 = Globales.inf1_examenes;
 
  this.examenesInfo3 = Globales.inf3_examenes;
+
+ this.examenesInfo2 = Globales.inf2_examenes;
+
+ this.examenesInfo4 = Globales.inf4_examenes;
  
  
   }
 visualizarInfo1(){
   this.puedeMostrarse=false;
 this.mostrarCatalogoInfo3=false;
+this.mostrarCatalogoInfo2=false;
+this.mostrarCatalogoInfo4=false;
 this.mostrarCatalogoInfo1=true;
 }
+
+visualizarInfo2(){
+  this.puedeMostrarse=false;
+  this.mostrarCatalogoInfo3=false;
+  this.mostrarCatalogoInfo2=true;
+  this.mostrarCatalogoInfo4=false;
+  this.mostrarCatalogoInfo1=false;
+}
+
 
 visualizarInfo3(){
   this.puedeMostrarse=false;
   this.mostrarCatalogoInfo3=true;
+  this.mostrarCatalogoInfo2=false;
+  this.mostrarCatalogoInfo4=false;
   this.mostrarCatalogoInfo1=false;
 }
 
+visualizarInfo4(){
+  this.puedeMostrarse=false;
+  this.mostrarCatalogoInfo3=false;
+  this.mostrarCatalogoInfo2=false;
+  this.mostrarCatalogoInfo4=true;
+  this.mostrarCatalogoInfo1=false;
+}
 mostrarExamen(id:string){
 //Borramos todo
 this.plantillaexamensito=null
@@ -53,7 +85,9 @@ this.plantillaexamensito=null
   console.log("Examen seleccionado "+id);
   this.puedeMostrarse=true;
   this.mostrarCatalogoInfo3=false;
-  this.mostrarCatalogoInfo1=false;
+  this.mostrarCatalogoInfo2=false;
+  this.mostrarCatalogoInfo3=false;
+  this.mostrarCatalogoInfo4=false;
 
 
   let estaUrl: string = Globales.urlBase + "/plantillaexamen/" + id;
@@ -87,7 +121,7 @@ swal(
     console.log("El examen es "+JSON.stringify(this.plantillaexamensito));
 
 
-  }, 1500);
+  }, 1700);
 
 
 }

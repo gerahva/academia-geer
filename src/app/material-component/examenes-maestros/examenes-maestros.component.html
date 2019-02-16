@@ -17,6 +17,8 @@
        <mat-card-actions>
           <button mat-raised-button color="accent"(click)="visualizarInfo1()">Informática 1</button>
           <button mat-raised-button color="primary"(click)="visualizarInfo3()">Informática 3</button>
+          <button mat-raised-button color="primary"(click)="visualizarInfo2()">Informática 2</button>
+          <button mat-raised-button color="primary"(click)="visualizarInfo4()">Informática 4</button>
         </mat-card-actions>
       </mat-card-content>      
   </mat-card>
@@ -79,9 +81,67 @@ TERMINA LOS CARDS DE LOS EXAMENES INFORMATICA 1
         </mat-card>
   </div>
 </div>
+
 <!------------------------------------------------------------------------------------------------
 TERMINA LOS CARDS DE LOS EXAMENES INFORMATICA 3
 -------------------------------------------------------------------------------------------------->
+
+<!-- ============================================================== -->
+<!-- Image Card row para informatia 2-->
+<!-- ============================================================== -->
+<div fxLayout="row" fxLayoutWrap="wrap" *ngIf="mostrarCatalogoInfo2">
+  <!-- Card column -->
+  <div fxFlex.gt-sm="33.33%" fxFlex="100"  *ngFor="let exa of examenesInfo2; let i=index">
+      <mat-card>
+          <mat-card-header>
+            <div mat-card-avatar><img src="assets/images/users/1.jpg" class="img-fluid img-circle"/></div>
+            <mat-card-title>{{exa.nombre}}</mat-card-title>
+          <!--  <mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
+          </mat-card-header>
+          <img mat-card-image src="assets/images/examenes.jpg" alt="Imagenes">
+          <mat-card-content>
+             <p>
+               Oprime el botón para visualizar el examen
+             </p>
+             <p></p>
+             <mat-card-actions>
+                <button mat-raised-button color="accent" (click)="mostrarExamen(exa.id)">VISUALIZAR</button>
+
+              </mat-card-actions>
+            </mat-card-content>      
+        </mat-card>
+  </div>
+</div>
+
+
+
+<!-- ============================================================== -->
+<!-- Image Card row para informatia 4-->
+<!-- ============================================================== -->
+<div fxLayout="row" fxLayoutWrap="wrap" *ngIf="mostrarCatalogoInfo4">
+  <!-- Card column -->
+  <div fxFlex.gt-sm="33.33%" fxFlex="100"  *ngFor="let exa of examenesInfo4; let i=index">
+      <mat-card>
+          <mat-card-header>
+            <div mat-card-avatar><img src="assets/images/users/1.jpg" class="img-fluid img-circle"/></div>
+            <mat-card-title>{{exa.nombre}}</mat-card-title>
+          <!--  <mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
+          </mat-card-header>
+          <img mat-card-image src="assets/images/examenes.jpg" alt="Imagenes">
+          <mat-card-content>
+             <p>
+               Oprime el botón para visualizar el examen
+             </p>
+             <p></p>
+             <mat-card-actions>
+                <button mat-raised-button color="accent" (click)="mostrarExamen(exa.id)">VISUALIZAR</button>
+
+              </mat-card-actions>
+            </mat-card-content>      
+        </mat-card>
+  </div>
+</div>
+
 
 <!----------------------------------------------------------------------------------
 INICIA LA CIVILIZACION DE EL EXAMEN SELECCIONADO

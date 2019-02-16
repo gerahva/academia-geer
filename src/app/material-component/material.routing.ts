@@ -30,6 +30,8 @@ import { ActivarExamenComponent } from "./activar-examen/activar-examen.componen
 import { ResultadoBloque2Component } from "./resultado-bloque2/resultado-bloque2.component";
 import { MiPerfilComponent } from "./mi-perfil/mi-perfil.component";
 import { PerfilAlumnoComponent } from "./perfil-alumno/perfil-alumno.component";
+import { ReporteAlumnosGeneralComponent } from "./reporte-alumnos-general/reporte-alumnos-general.component";
+import { AndamiosProfesoralumnoComponent } from "./andamios-profesoralumno/andamios-profesoralumno.component";
 
 export const MaterialRoutes: Routes = [
   {
@@ -49,6 +51,10 @@ export const MaterialRoutes: Routes = [
       {
         path: "reporte-general",
         component: ReporteGeneralComponent
+      },
+      {
+        path:'alumnos-alta',
+        component:ReporteAlumnosGeneralComponent
       },
 
       {
@@ -79,6 +85,10 @@ export const MaterialRoutes: Routes = [
       {
         path: "andamios-alumnos",
         component: AndamiosAlumnosComponent
+      },
+      {
+     path:'andamios-profesoralumnos',
+     component:AndamiosProfesoralumnoComponent
       },
       {
         path: "andamios-profesores",

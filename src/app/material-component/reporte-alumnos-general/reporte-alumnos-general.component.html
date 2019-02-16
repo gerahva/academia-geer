@@ -3,13 +3,13 @@
     <mat-card>
       <mat-card-header>
         <div mat-card-avatar><img src="assets/images/users/1.jpg" class="img-fluid img-circle" /></div>
-        <mat-card-title>Grupos y resultados de examenes</mat-card-title>
+        <mat-card-title>Grupos y alumnos registrados</mat-card-title>
         <mat-card-subtitle>Selecciona un curso</mat-card-subtitle>
       </mat-card-header>
 
       <mat-card-content>
         <p>
-          Selecciona un curso para mostrar los exámenes.
+          Selecciona un curso para mostrar las listas
         </p>
         <mat-card-actions>
           <button mat-raised-button color="accent" (click)='verGrupoInfo(info2)'>Informática 2</button>
@@ -28,16 +28,18 @@
   <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
     <mat-card>
       <mat-card-content>
-        <mat-card-title>Resultados Examen Bloque 2</mat-card-title>
-        <p>Puedes filtrar escribiendo el nombre del alumno, su clave o incluso el grupo, y así reducir el número de registros</p>
-        <div class="bg-light p-10 p-r-20 p-l-20">
-            <mat-form-field>
-                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
-            </mat-form-field>
-        </div>
+        <mat-card-title>Alumnos registrados</mat-card-title>
+
         <mat-card-actions>
           <button mat-raised-button color="warn" (click)="exportToExcel()" class="btn btn-primary">Descargar Excel</button>
         </mat-card-actions>
+        <div class="bg-light p-10 p-r-20 p-l-20">
+          <p>Para filtra introduce el plantel, o bien el grupo, o incluso un apellido o nombre de algún  alumno para reducir la búsqueda</p>
+          <mat-form-field>
+              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
+          </mat-form-field>
+      </div>
+    
         <div class="table-responsive">
           <mat-table #table [dataSource]="dataSource" matSort style="max-height: 500px; overflow:auto;">
 
@@ -53,18 +55,9 @@
               <mat-cell style="width:120px;" *matCellDef="let element"> {{element.nombreCompleto}} </mat-cell>
             </ng-container>
 
-            <!-- Weight Column -->
-            <ng-container matColumnDef="examenes.nombre">
-              <mat-header-cell *matHeaderCellDef mat-sort-header>Examen </mat-header-cell>
-              <mat-cell *matCellDef="let element"> {{element.examenes[0].nombre}} </mat-cell>
-            </ng-container>
+       
 
-            <!-- Symbol Column -->
-            <ng-container matColumnDef="examenes.calificacion">
-              <mat-header-cell style="width:20px;" *matHeaderCellDef mat-sort-header>Calificacion </mat-header-cell>
-              <mat-cell style="width:20px;" *matCellDef="let element"> {{element.examenes[0].calificacion | number:'1.1-2'}}
-                </mat-cell>
-            </ng-container>
+          
             <!-- Symbol Column -->
             <ng-container matColumnDef="plantel">
               <mat-header-cell style="width:20px;" *matHeaderCellDef mat-sort-header>Plantel </mat-header-cell>
@@ -88,7 +81,6 @@
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
           </mat-table>
-       
         </div>
 
       </mat-card-content>

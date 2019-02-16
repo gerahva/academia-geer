@@ -22,7 +22,9 @@ videourl="https://geducativoedi.com.mx/intro.mp4";
 
   materias = [
     {value: 'info1', viewValue: 'Informática 1'},
+    {value: 'info2', viewValue: 'Informática 2'},
     {value: 'info3', viewValue: 'Informática 3'},
+    {value: 'info4', viewValue: 'Informática 4'},
   
   ];
   bloques = [
@@ -37,7 +39,7 @@ videourl="https://geducativoedi.com.mx/intro.mp4";
     {value: 'internet', viewValue: 'Internet'},
     {value: 'power', viewValue: 'Power Point'},
     {value: 'programacion', viewValue: 'Programación'},
-    {value: 'scracht', viewValue: 'Programación Scratch'}
+    {value: 'scracht', viewValue: 'Introducción a Scratch'}
   ];
 
   constructor(private fb: FormBuilder, private router: Router) {}

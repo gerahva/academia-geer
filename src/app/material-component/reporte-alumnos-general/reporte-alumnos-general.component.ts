@@ -10,27 +10,28 @@ import { Http, ResponseContentType } from '@angular/http';
 
 
 @Component({
-  selector: 'app-reporte-alumnos',
-  templateUrl: './reporte-alumnos.component.html',
-  styles: ['reporte.css'],
+  selector: 'app-reporte-alumnos-general',
+  templateUrl: './reporte-alumnos-general.component.html',
+  styleUrls: ['./reporte-alumnos-general.component.css'],
   providers: [ExcelService]
 })
-export class ReporteAlumnosComponent implements OnInit {
+export class ReporteAlumnosGeneralComponent implements OnInit {
   profesor: Profesor = {}
   estaCargando=false;
   alumnos: Alumno[] = []
   reporteAlumnos :ReporteAlumno[]=[]
 
   dataSource = new MatTableDataSource<Alumno>()
-  info1 = 'inf1-diagnostico'
-  info3 = 'inf3-diagnostico'
 
-  info2 = 'inf2-diagnostico'
-  info4 = 'inf4-diagnostico'
+  info1 = 'Informatica 1'
+  info3 = 'Informatica 3'
+
+  info2 = 'Informatica 2'
+  info4 = 'Informatica 4'
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  displayedColumns = ['indice', 'nombreCompleto', 'examenes.nombre', 'examenes.calificacion','clave', 'plantel', 'turno', 'grupo'];
+  displayedColumns = ['indice', 'nombreCompleto','clave', 'plantel', 'turno', 'grupo'];
 
   mostrarGrupo = false
   profesorNombreMateria: string
@@ -71,7 +72,7 @@ export class ReporteAlumnosComponent implements OnInit {
     this.http
       .get<Alumno[]>(
         Globales.urlBase +
-        "/alumno/clave-profesor/" +
+        "/alumno/lista-general/" +
         this.profesor.clave +
         "/" +
         valor
@@ -103,9 +104,9 @@ export class ReporteAlumnosComponent implements OnInit {
         //Llenamos perote alumnos
         this.reporteAlumnos.push({numero:indice,
           nombre:this.alumnos[i].nombreCompleto,
-          examen:this.alumnos[i].examenes[0].nombre,
+        
            clave:this.alumnos[i].clave,
-          calificacion:this.alumnos[i].examenes[0].calificacion,
+       
            plantel:this.alumnos[i].plantel,
           turno:this.alumnos[i].turno,
           grupo:this.alumnos[i].grupo

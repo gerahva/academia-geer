@@ -70,9 +70,16 @@ export class ExamenesComponent implements OnInit {
     if (Globales.examenesMateriNombre == "Informatica 1")
       this.examenes = Globales.inf1_examenes;
 
+      if (Globales.examenesMateriNombre == "Informatica 2")
+      this.examenes = Globales.inf2_examenes; 
+
     if (Globales.examenesMateriNombre == "Informatica 3")
       this.examenes = Globales.inf3_examenes;
+      if (Globales.examenesMateriNombre == "Informatica 4")
+      this.examenes = Globales.inf4_examenes;
   }
+
+  
 
   /***************************************************
  EMPEZAR EXAMEN
