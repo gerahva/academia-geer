@@ -86,6 +86,7 @@ export interface Menu {
         {state:'reporte-alumnos',name:'Resultado Diagnóstico'},
         {state:'resultado-bloque1', name:"Resultado Bloque 1"},
         {state:'resultado-bloque2', name:"Resultado Bloque 2"},
+        {state:'resultado-bloque3', name:'Resultado Bloque 3'},
         {state:'activar-examen', name:'Activar examenes'}
     ]
   } 

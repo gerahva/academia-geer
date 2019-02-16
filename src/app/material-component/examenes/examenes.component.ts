@@ -259,9 +259,9 @@ export class ExamenesComponent implements OnInit {
       this.mostrarCatalogo = true;
 
       //Enviamos a travez de http
-     // this.http
-      //  .post<Estatus>(Globales.urlBase + "/alumno/examen", this.alumno)
-      //  .subscribe(respuesta => (this.estatus = respuesta));
+      this.http
+       .post<Estatus>(Globales.urlBase + "/alumno/examen", this.alumno)
+       .subscribe(respuesta => (this.estatus = respuesta));
 
 
       //Activamos la 
