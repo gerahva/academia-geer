@@ -52,13 +52,12 @@ import { ActivarExamenComponent } from './activar-examen/activar-examen.componen
 import { ResultadoBloque2Component } from './resultado-bloque2/resultado-bloque2.component';
 import { MiPerfilComponent } from './mi-perfil/mi-perfil.component';
 import { PerfilAlumnoComponent } from './perfil-alumno/perfil-alumno.component';
-<<<<<<< HEAD
 import { ReporteAlumnosGeneralComponent } from './reporte-alumnos-general/reporte-alumnos-general.component';
 import { ReporteAlumnosgeneralComponent } from './reporte-alumnosgeneral/reporte-alumnosgeneral.component';
 import { AndamiosProfesoralumnoComponent } from './andamios-profesoralumno/andamios-profesoralumno.component';
-=======
 import { ResultadoBloque3Component } from './resultado-bloque3/resultado-bloque3.component';
->>>>>>> 578d98982bb8bc14367ad286e8e2f48f1b83db10
+import { ReactivosComponent } from './reactivos/reactivos.component';
+
 //import { DxDataGridModule, DxButtonModule} from 'devextreme-angular';
 //import{ DevExtremeModule } from 'devextreme-angular'; 
 
@@ -120,13 +119,14 @@ import { ResultadoBloque3Component } from './resultado-bloque3/resultado-bloque3
     ResultadoBloque2Component,
     MiPerfilComponent,
     PerfilAlumnoComponent,
-<<<<<<< HEAD
     ReporteAlumnosGeneralComponent,
     ReporteAlumnosgeneralComponent,
-    AndamiosProfesoralumnoComponent  
-=======
-    ResultadoBloque3Component  
->>>>>>> 578d98982bb8bc14367ad286e8e2f48f1b83db10
+    AndamiosProfesoralumnoComponent ,
+    
+    ResultadoBloque3Component,
+  ResultadoBloque2Component,
+    ReactivosComponent  
+
   ]
 })
 

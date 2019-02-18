@@ -40,10 +40,11 @@ export interface Menu {
         type: 'sub',
         icon: 'computer',
         badge: [
-            {type: 'red', value: '6'}
+            {type: 'red', value: '7'}
         ],
         children: [
             {state:'perfil',name:'Mi Perfil'},
+            {state:'reactivos',name:'Generar reactivos'},
             {state:'perfil-alumno',name:'Perfil alumnos'},
             {state: 'videos', name: 'Mis Videos'},
             {state:'andamios-profesores',name:'Andamios'},
