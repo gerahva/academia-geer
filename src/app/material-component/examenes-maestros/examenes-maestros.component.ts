@@ -7,7 +7,7 @@ import swal from 'sweetalert2'
 @Component({
   selector: 'app-examenes-maestros',
   templateUrl: './examenes-maestros.component.html',
-  styles: []
+  styleUrls: ["./examenes-maestros.css"]
 })
 export class ExamenesMaestrosComponent implements OnInit {
 mostrarCatalogoInfo1=false;

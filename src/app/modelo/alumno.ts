@@ -13,6 +13,7 @@ nombre?:string;
  grupo?:number;
  plantel?:number
  turno?:string;
+ date?:string
 password?:string;
  email?:string;
  claveProfesor?:String;

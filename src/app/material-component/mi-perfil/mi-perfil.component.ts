@@ -25,25 +25,27 @@ constructor(public http:HttpClient) {
 
   this.profesor=Globales.profesor
 
-  this.email=this.profesor.email;
-    this.password=this.profesor.password;
-
-
+ this.password=this.profesor.password;
+ this.email=this.profesor.email;
+ 
  }
 
   ngOnInit() {
+
   }
 
 
  
  
   actualizarProfesor(){
-    this.profesor.email=this.email;
 
-    this.profesor.password=this.password;
    // console.log("Alumno a actualizar: "+JSON.stringify(this.alumno));
 
-   console.log("La clave es  "+this.claveProfesor);
+   console.log("La clave es  "+this.password);
+   console.log("El email  "+this.email);
+   console.log('El pass '+this.password);
+   this.profesor.email=this.email;
+   this.profesor.password=this.password;
     this.http
     .put<Estatus>(Globales.urlBase + "/profesor-clave",this.profesor )
     .subscribe(respuesta => (this.estatus = respuesta));

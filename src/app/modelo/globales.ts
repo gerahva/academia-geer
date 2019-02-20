@@ -10,7 +10,7 @@ export class Globales {
   public static profesor: Profesor = {};
 
 public static urlBase:string="https://geradmin.herokuapp.com/api";
- //public static urlBase: string = "http://192.168.100.7:9000/api";
+// public static urlBase: string = "http://192.168.100.7:9000/api";
   //TONTOTTTTTTTTTTT
 
   public static esProfesor: boolean;
@@ -43,13 +43,13 @@ public static urlBase:string="https://geradmin.herokuapp.com/api";
   ]
 
   public static inf2_examenes:any=[
-    {id:'inf2-diagnostico', nombre:' Inf 2, Diagnóstico'}
+    {id:'inf2-diagnostico', nombre:'Diagnóstico'}
   
  
    ]
 
    public static inf4_examenes:any=[
-    {id:'inf4-diagnostico', nombre:' Inf 4, Diagnóstico'}
+    {id:'inf4-diagnostico', nombre:'Diagnóstico'}
   
  
    ]
