@@ -28,7 +28,7 @@
                       <!-- col full-->    
                       <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
                           <mat-form-field>
-                              <input matInput type="password" placeholder="Password" [formControl]="form.controls['password']"> 
+                              <input matInput type="password" placeholder="Password"  passwordToggle [formControl]="form.controls['password']"> 
                           </mat-form-field> 
                           <small *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched" class="text-danger support-text">Contraseña requerida.</small>
                           <small *ngIf="mostrarError" class="text-danger support-text">Datos incorrectos!</small>

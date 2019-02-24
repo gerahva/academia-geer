@@ -17,6 +17,7 @@ nombre?:string;
 password?:string;
  email?:string;
  claveProfesor?:String;
+ fecha?:string
  examenes?:Examen[]
 
     

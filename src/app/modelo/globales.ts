@@ -11,6 +11,7 @@ export class Globales {
 
 public static urlBase:string="https://geradmin.herokuapp.com/api";
 // public static urlBase: string = "http://192.168.100.7:9000/api";
+//public static urlBase: string = "http://localhost:9000/api";
   //TONTOTTTTTTTTTTT
 
   public static esProfesor: boolean;

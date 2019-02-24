@@ -43,27 +43,27 @@ export const MaterialRoutes: Routes = [
     path: "",
     children: [
 
- {
-   path:'perfil',
-   component:MiPerfilComponent
+      {
+        path: 'perfil',
+        component: MiPerfilComponent
 
- },
- {
-  path:'perfil-alumno',
-  component:PerfilAlumnoComponent
- },
+      },
+      {
+        path: 'perfil-alumno',
+        component: PerfilAlumnoComponent
+      },
 
       {
         path: "reporte-general",
         component: ReporteGeneralComponent
       },
       {
-       path:'reactivos',
-       component:ReactivosComponent
+        path: 'reactivos',
+        component: ReactivosComponent
       },
       {
-        path:'alumnos-alta',
-        component:ReporteAlumnosGeneralComponent
+        path: 'alumnos-alta',
+        component: ReporteAlumnosGeneralComponent
       },
 
       {
@@ -75,8 +75,8 @@ export const MaterialRoutes: Routes = [
         component: ResultadoBloque2Component
       },
       {
-      path:'resultado-bloque3',
-      component:ResultadoBloque3Component
+        path: 'resultado-bloque3',
+        component: ResultadoBloque3Component
       },
 
       {
@@ -100,8 +100,8 @@ export const MaterialRoutes: Routes = [
         component: AndamiosAlumnosComponent
       },
       {
-     path:'andamios-profesoralumnos',
-     component:AndamiosProfesoralumnoComponent
+        path: 'andamios-profesoralumnos',
+        component: AndamiosProfesoralumnoComponent
       },
       {
         path: "andamios-profesores",
