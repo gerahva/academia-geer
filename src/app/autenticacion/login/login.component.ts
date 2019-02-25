@@ -14,6 +14,9 @@ import { Globales } from '../../modelo/globales';
   templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit {
+//Para ocultar mostrar password
+hide=true
+
   perfil: string
   login: string;
   password: string;

@@ -17,7 +17,7 @@ import { AppSidebarComponent } from './layouts/full/sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule} from './demo-material-module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {NgxPasswordToggleModule} from 'ngx-password-toggle'
+
 
 import { SharedModule } from './shared/shared.module';
 import { SpinnerComponent } from './shared/spinner.component';
@@ -48,7 +48,8 @@ import { RecuperacionComponent } from './autenticacion/recuperacion/recuperacion
     FormsModule,
     ReactiveFormsModule,
     SharedModule,  
-    NgxPasswordToggleModule,
+
+
     RouterModule.forRoot(AppRoutes)  
   ],
 

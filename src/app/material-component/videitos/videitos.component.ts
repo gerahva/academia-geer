@@ -21,16 +21,16 @@ export class VideitosComponent implements OnInit {
 videourl="https://geducativoedi.com.mx/intro.mp4";
 
   materias = [
-    {value: 'info1', viewValue: 'Informática 1'},
+  //  {value: 'info1', viewValue: 'Informática 1'},
     {value: 'info2', viewValue: 'Informática 2'},
-    {value: 'info3', viewValue: 'Informática 3'},
-    {value: 'info4', viewValue: 'Informática 4'},
+  //  {value: 'info3', viewValue: 'Informática 3'},
+    {value: 'info4', viewValue: 'Informática 4'}
   
   ];
   bloques = [
     {value: 'bloque1', viewValue: 'Bloque 1'},
     {value: 'bloque2', viewValue: 'Bloque 2'},
-    {value: 'bloque3', viewValue: 'Bloque 3'},
+    {value: 'bloque3', viewValue: 'Bloque 3'}
 
   ];
   cursos = [
@@ -65,7 +65,27 @@ cursoSeleccionado(event:any){
       {value: 'programacion', viewValue: 'Programación'},
       {value: 'scracht', viewValue: 'Programación Scratch'}
     ];
-  }if(event.value=='info1'){
+  }
+  if(event.value=='info2'){
+    this.cursos = [
+      {value: 'internet', viewValue: 'Internet'},
+      {value: 'word', viewValue: 'Word'},
+
+      {value: 'excel', viewValue: 'Excel'},
+      {value: 'power', viewValue: 'Power Point'}
+    ];
+  }
+  if(event.value=='info4'){
+    this.cursos = [
+      {value: 'word', viewValue: 'Word'},
+      {value: 'excel', viewValue: 'Excel'},
+
+      {value: 'programacion', viewValue: 'Programación'},
+      {value: 'app-inventor', viewValue: 'App Inventor'}
+    ];
+  }
+  
+  if(event.value=='info1'){
     this.cursos = [
       {value: 'excel', viewValue: 'Excel'},
       {value: 'word', viewValue: 'Word'},
