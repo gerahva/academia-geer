@@ -601,10 +601,6 @@ Apache License
  See the License for the specific language governing permissions and
  limitations under the License.
 
-ngx-password-toggle@1.0.3
-MIT
-MIT
-
 @angular/material@6.1.0
 MIT
 The MIT License
