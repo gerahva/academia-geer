@@ -73,10 +73,16 @@
               <mat-header-cell style="width:20px;" *matHeaderCellDef mat-sort-header>Turno </mat-header-cell>
               <mat-cell style="width:20px;" *matCellDef="let element"> {{element.turno}} </mat-cell>
             </ng-container>
+
             <!-- Symbol Column -->
             <ng-container matColumnDef="grupo">
               <mat-header-cell style="width:20px;" *matHeaderCellDef mat-sort-header>Grupo </mat-header-cell>
               <mat-cell style="width:20px;" *matCellDef="let element"> {{element.grupo}} </mat-cell>
+            </ng-container>
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="fecha">
+              <mat-header-cell style="width:20px;" *matHeaderCellDef mat-sort-header>Fecha </mat-header-cell>
+              <mat-cell style="width:20px;" *matCellDef="let element"> {{element.fecha}} </mat-cell>
             </ng-container>
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>

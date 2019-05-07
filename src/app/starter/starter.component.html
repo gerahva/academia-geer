@@ -1,8 +1,15 @@
 <mat-card>
     <mat-card-content>
-     
+
         <mat-card-title class="text-center">Academia GEER</mat-card-title>
         <mat-card-subtitle class="text-center">Bienvenidos</mat-card-subtitle>
-        <p class="text-center">Selecciona la opcion que desees del menú</p>
+        <p class="text-center">Versión Beta 1.0.1, continuamos actualizando</p>
+        <p *ngIf="esProfesor">Alumnos totales registrados con su clave:</p>
+
+        <mat-chip-list class="text-center">
+
+            <mat-chip color="accent" selected>Registrados: {{totales}}</mat-chip>
+        </mat-chip-list>
+
     </mat-card-content>
-  </mat-card>
+</mat-card>

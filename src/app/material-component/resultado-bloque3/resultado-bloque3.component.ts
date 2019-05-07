@@ -28,6 +28,10 @@ export class ResultadoBloque3Component implements OnInit {
   dataSource = new MatTableDataSource<Alumno>();
   info1 = "inf1-b3";
   info3 = "inf3-b3";
+
+  info2 = "inf2-b3";
+  info4 = "inf4-b3";
+
   estaCargando = false;
   mostrarGrupo = false;
   profesorNombreMateria: string;
@@ -93,8 +97,7 @@ export class ResultadoBloque3Component implements OnInit {
       )
       .subscribe(respuesta => {
         this.alumnos = respuesta;
-      });
-    setTimeout(() => {
+
       console.log(
         "Los alumnos que llegaron para el listado son" +
           JSON.stringify(this.alumnos)
@@ -163,7 +166,9 @@ export class ResultadoBloque3Component implements OnInit {
        this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
       this.estaCargando = false;
-    }, 1800);
+    
+      });
+
   }
 }
 

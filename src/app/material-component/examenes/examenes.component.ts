@@ -47,39 +47,40 @@ export class ExamenesComponent implements OnInit {
   estaExamenInfo2ExcelB2Realizado: boolean = false;
   estaExamenInfo2PowerB2Realizado: boolean = false;
   plantillaexamensito: Plantillaexamen = {};
-  examenAEnviar:Plantillaexamen={};
+  examenAEnviar: Plantillaexamen = {};
 
   public preguntas: Pregunta[];
-  
+
   public numeroPreguntas: number;
   public indicePegunta: number = 0;
   public contadorPregunta: number = 1;
   public preguntaActual: Pregunta = {};
   public hayIntroduccion: boolean = false;
+  public puedeMostrarPreguntas=false;
 
   public introduccion: string;
 
   public estatus: Estatus = {};
 
-  public 
+  public
 
-  constructor(public http: HttpClient) {}
+  constructor(public http: HttpClient) { }
   ngOnInit() {
     //Ocultamos el examen inicial antes
 
     if (Globales.examenesMateriNombre == "Informatica 1")
       this.examenes = Globales.inf1_examenes;
 
-      if (Globales.examenesMateriNombre == "Informatica 2")
-      this.examenes = Globales.inf2_examenes; 
+    if (Globales.examenesMateriNombre == "Informatica 2")
+      this.examenes = Globales.inf2_examenes;
 
     if (Globales.examenesMateriNombre == "Informatica 3")
       this.examenes = Globales.inf3_examenes;
-      if (Globales.examenesMateriNombre == "Informatica 4")
+    if (Globales.examenesMateriNombre == "Informatica 4")
       this.examenes = Globales.inf4_examenes;
   }
 
-  
+
 
   /***************************************************
  EMPEZAR EXAMEN
@@ -98,53 +99,18 @@ export class ExamenesComponent implements OnInit {
     this.mostrarExamenAcual = true;
     //Ocultamos el catalogo
     this.mostrarCatalogo = false;
+    this.puedeMostrarPreguntas=false
     //hay
     let x = 2;
 
     //Checamos el examen
-    this.irAExamen();
+    this.irAExamen(id);
 
-    let estaUrl: string = Globales.urlBase + "/plantillaexamen/" + id;
-    console.log("La es esta  url" + estaUrl);
-    this.http.get<Plantillaexamen>(estaUrl).subscribe(respuesta => {
-      this.plantillaexamensito = respuesta;
-   //Asignamos a la plantilla del examen la variable examernAEnviar para igualarlos
- this.examenAEnviar=respuesta;
-      
-    });
 
-    setTimeout(() => {
-      //Checamos que haya devuelto un examen que no sea null o que este este activo
-      if (this.plantillaexamensito == null) {
-        this.mostrarCatalogo = true;
-        this.puedeHacerExamen = false;
-
-        swal(
-          "Examen no activo!",
-          "Todavia no está activo este examen",
-          "error"
-        );
-      }
-
-      this.mostrar = false;
-      if (this.plantillaexamensito.introduccion != null)
-        this.hayIntroduccion = true;
-
-      this.numeroPreguntas = this.plantillaexamensito.preguntas.length;
-      this.introduccion = this.plantillaexamensito.introduccion;
-      console.log(
-        "El nombre del examen a gestionar es " + this.nombreExamenActual
-      );
-      console.log(
-        "El examen tiene son numero " +
-          this.plantillaexamensito.preguntas.length
-      );
-      console.log("El examen es " + JSON.stringify(this.plantillaexamensito));
-    }, 1800);
   }
 
   //Primro checamos si el alumno puede hacer este examen, es decir vemos si ya existe en su ristro
-  irAExamen() {
+  irAExamen(id: string) {
     let alumnito: Alumno = {
       email: Globales.alumno.email,
       password: Globales.alumno.password
@@ -152,43 +118,87 @@ export class ExamenesComponent implements OnInit {
 
     console.log(
       "SE VA A ENVIAR ESTE ALUMNO para examen con passwoprd: " +
-        Globales.alumno.password
+      Globales.alumno.password
     );
     this.http
       .post<Alumno>(Globales.urlBase + "/alumno-examen", alumnito)
       .subscribe(respuesta => {
+
+
         this.alumno = respuesta;
-      });
-    setTimeout(() => {
-      //  verificamos si el examen diagnosticol está relaizado:
-
-      this.puedeHacerExamen = this.checarSiPuedeHacerExamen(
-        this.nombreExamenActual,
-        this.alumno
-      );
-      if (this.plantillaexamensito == null) {
-        swal(
-          "Examen no activo",
-          "Todavía no se puede hacer este examen",
-          "error"
+        //Aqui
+        this.puedeHacerExamen = this.checarSiPuedeHacerExamen(
+          this.nombreExamenActual,
+          this.alumno
         );
-      } else if (!this.puedeHacerExamen) {
-        this.mostrarCatalogo = true;
+        if (!this.puedeHacerExamen||this.plantillaexamensito==null) {
+          this.mostrarCatalogo = true;
 
-        swal("Examen realizado!", "Ya has contestado este examen", "error");
-      } else {
-        console.log("Puede hacer examen?" + this.puedeHacerExamen);
-        this.preguntaActual = this.plantillaexamensito.preguntas[0];
-        this.numeroPreguntas = this.plantillaexamensito.preguntas.length;
-      }
-    }, 1600);
+          swal("Examen realizado!", "Ya has contestado este examen", "error");
+        } else {
+          /*
+          examen
+          */
+
+      
+
+          let estaUrl: string = Globales.urlBase + "/plantillaexamen/" + id;
+          console.log("La es esta  url" + estaUrl);
+          this.http.get<Plantillaexamen>(estaUrl).subscribe(respuesta => {
+            this.plantillaexamensito = respuesta;
+            //Asignamos a la plantilla del examen la variable examernAEnviar para igualarlos
+            this.examenAEnviar = respuesta;
+
+            //Checamos que haya devuelto un examen que no sea null o que este este activo
+            if (this.plantillaexamensito == null) {
+              this.mostrarCatalogo = true;
+              this.puedeHacerExamen = false;
+
+              swal(
+                "Examen no activo!",
+                "Todavia no está activo este examen",
+                "error"
+              );
+            }
+
+            this.mostrar = false;
+            if (this.plantillaexamensito.introduccion != null)
+              this.hayIntroduccion = true;
+
+            this.numeroPreguntas = this.plantillaexamensito.preguntas.length;
+            this.introduccion = this.plantillaexamensito.introduccion;
+            console.log(
+              "El nombre del examen a gestionar es " + this.nombreExamenActual
+            );
+            console.log(
+              "El examen tiene son numero " +
+              this.plantillaexamensito.preguntas.length
+            );
+            console.log("El examen es " + JSON.stringify(this.plantillaexamensito));
+
+            console.log("Puede hacer examen?" + this.puedeHacerExamen);
+            this.preguntaActual = this.plantillaexamensito.preguntas[0];
+            this.numeroPreguntas = this.plantillaexamensito.preguntas.length;
+  
+  
+
+
+          });
+
+
+
+        }
+
+
+      });
+
   }
 
   siguiente() {
     //Checamos antes   si es correcta ANTES DE PASAR A LA OTRA, PERO ANTES VEMOS LA SELECCIONADA Y LA PONEMOS
     //AL EXAMEN examenAEnviar
-     
-   
+
+
 
 
     if (
@@ -204,13 +214,13 @@ export class ExamenesComponent implements OnInit {
     //AQUI AGREGAMOS A LA PLANTILLA EXAMEN A ENVIAR EL EXMANN QUE ENVIAREMOS
 
 
-  this.examenAEnviar.preguntas[this.indicePegunta].opciones[this.selectedValue]=  this.plantillaexamensito.preguntas[this.indicePegunta].opciones[
+    this.examenAEnviar.preguntas[this.indicePegunta].opciones[this.selectedValue] = this.plantillaexamensito.preguntas[this.indicePegunta].opciones[
       this.selectedValue
     ]
 
-  
 
-    this.examenAEnviar.preguntas[this.indicePegunta].opciones[this.selectedValue].acierto=true;
+
+    this.examenAEnviar.preguntas[this.indicePegunta].opciones[this.selectedValue].acierto = true;
 
     //iNCREMENTAMOS LA OTRA A LA  QUE SE VA A PASAR SIGUIENTE
     this.indicePegunta++;
@@ -224,9 +234,9 @@ export class ExamenesComponent implements OnInit {
       ];
     } else {
       //Ya que no hay mas preguntas!!!???
-   //ya esta la clave prepagara del alumno con el id del examen
-   //sedssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-      this.examenAEnviar.id=this.plantillaexamensito.id+"-"+this.alumno.clave;
+      //ya esta la clave prepagara del alumno con el id del examen
+      //sedssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+      this.examenAEnviar.id = this.plantillaexamensito.id + "-" + this.alumno.clave;
 
 
       this.mostrar = true;
@@ -239,8 +249,8 @@ export class ExamenesComponent implements OnInit {
 
       //MOstramos la calificacion al almnos para que sepa que saco
       swal(
-        "Examen: "+ this.nombreExamenActual ,
-        "Tu califiación es " + this.calificacion.toFixed(2)+" Clave: "+this.alumno.clave,
+        "Examen: " + this.nombreExamenActual,
+        "Tu califiación es " + this.calificacion.toFixed(2) + " Clave: " + this.alumno.clave,
         "success"
       );
 
@@ -260,16 +270,21 @@ export class ExamenesComponent implements OnInit {
 
       //Enviamos a travez de http
       this.http
-       .post<Estatus>(Globales.urlBase + "/alumno/examen", this.alumno)
-       .subscribe(respuesta => (this.estatus = respuesta));
+        .post<Estatus>(Globales.urlBase + "/alumno/examen", this.alumno)
+        .subscribe(respuesta => {
+          this.estatus = respuesta
+
+          console.log("Mensaje del servidor" + this.estatus.success);
+          console.log("EXAMEN A ENVIARSEEEEE  " + JSON.stringify(this.examenAEnviar));
+
+        });
 
 
       //Activamos la 
-      this.http.post<Estatus>('https://daton.herokuapp/api/examenso', this.examenAEnviar).subscribe(res=>{this.estatus=res})
-     // this.http.post<Estatus>('http://192.168.100.7:8080/api/examenso', this.examenAEnviar).subscribe(res=>{this.estatus=res})
+      // this.http.post<Estatus>('https://daton.herokuapp/api/examenso', this.examenAEnviar).subscribe(res=>{this.estatus=res})
+      // this.http.post<Estatus>('http://192.168.100.7:8080/api/examenso', this.examenAEnviar).subscribe(res=>{this.estatus=res})
       setTimeout(() => {
-        console.log("Mensaje del servidor" + this.estatus.success);
-        console.log("EXAMEN A ENVIARSEEEEE  "+JSON.stringify(this.examenAEnviar));
+
 
       }, 1600);
     }
@@ -295,7 +310,7 @@ export class ExamenesComponent implements OnInit {
       }
       console.log("ciclo terminado Estatus de puede o no puede " + puede);
     }
-    this.contadorPregunta=1;
+    this.contadorPregunta = 1;
 
     return puede;
   }

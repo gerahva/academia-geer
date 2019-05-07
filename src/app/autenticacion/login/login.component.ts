@@ -63,25 +63,30 @@ hide=true
         .post<Estatus>(this.urlAutenticacion, this.profesor)
         .subscribe(respuesta => {
           this.estatus = respuesta;
-        });
-      setTimeout(() => {
-        this.oculta = false;
-        console.log(this.estatus.mensaje + " Estatus " + this.estatus.success);
-        if (this.estatus.success) {
-          //Si se autentica como profesor
-          Globales.esProfesor = true;
-          this.mostrarError = false;
-          Globales.profesor = this.profesor;
-          Globales.esAlumno = false;
-          Globales.profesor.clave = this.estatus.perfil.clave;
-          console.log("Este profesor: "+JSON.stringify(this.estatus));
-          this.router.navigate(["/starter"], { skipLocationChange: true })
 
-        }else{
-          this.estatus.mensaje;
-          this.mostrarError=true;
-        }
-      },1200);
+          this.oculta = false;
+          console.log(this.estatus.mensaje + " Estatus " + this.estatus.success);
+          if (this.estatus.success) {
+            //Si se autentica como profesor
+            Globales.esProfesor = true;
+            this.mostrarError = false;
+            Globales.profesor = this.profesor;
+            Globales.esAlumno = false;
+            Globales.profesor.clave = this.estatus.perfil.clave;
+            console.log("Este profesor: "+JSON.stringify(this.estatus));
+            this.router.navigate(["/starter"], { skipLocationChange: true })
+  
+          }else{
+            console.log("no esta bien tu login")
+            this.estatus.mensaje;
+            this.mostrarError=true;
+          }
+
+
+
+
+        });
+   
     }
     /* ************************************************************************
     AUTENTCION ALUMNOS
@@ -100,34 +105,39 @@ hide=true
         .post<Estatus>(this.urlAutenticacion, this.alumno)
         .subscribe(respuesta => {
           this.estatus = respuesta;
+
+          this.oculta = false;
+          console.log(this.estatus.mensaje + " Estatus " + this.estatus.success);
+          if (this.estatus.success) {
+  
+            //Si se autentica:
+            Globales.alumno = this.alumno;
+            Globales.alumno.clave = this.estatus.perfil.clave;
+            Globales.examenesMateriNombre=this.estatus.perfil.materiaNombre;
+  
+        console.log("Autenticado como alumno "+JSON.stringify(this.estatus));
+        console.log("Alumno materia "+Globales.examenesMateriNombre);
+            //El paso importante la clave
+  
+            this.router.navigate(["/starter"], { skipLocationChange: true });
+            this.estaOculta = true;
+            //Como no es profesor...
+            Globales.esProfesor = false;
+            Globales.esAlumno = true;
+       //Ahora accederemos al perfil
+            Globales.estatus = this.estatus;
+  
+          }else{
+            this.mostrarError=true;
+            console.log("ESto sucedio que no se logeo "+this.estatus.mensaje);
+          }
+
+
+
         });
 
       setTimeout(() => {
-        this.oculta = false;
-        console.log(this.estatus.mensaje + " Estatus " + this.estatus.success);
-        if (this.estatus.success) {
-
-          //Si se autentica:
-          Globales.alumno = this.alumno;
-          Globales.alumno.clave = this.estatus.perfil.clave;
-          Globales.examenesMateriNombre=this.estatus.perfil.materiaNombre;
-
-      console.log("Autenticado como alumno "+JSON.stringify(this.estatus));
-      console.log("Alumno materia "+Globales.examenesMateriNombre);
-          //El paso importante la clave
-
-          this.router.navigate(["/starter"], { skipLocationChange: true });
-          this.estaOculta = true;
-          //Como no es profesor...
-          Globales.esProfesor = false;
-          Globales.esAlumno = true;
-     //Ahora accederemos al perfil
-          Globales.estatus = this.estatus;
-
-        }else{
-          this.mostrarError=true;
-          console.log(this.estatus.mensaje);
-        }
+      
       },1200);
 
 

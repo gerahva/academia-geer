@@ -31,7 +31,7 @@ export class ReporteAlumnosGeneralComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  displayedColumns = ['indice', 'nombreCompleto','clave', 'plantel', 'turno', 'grupo'];
+  displayedColumns = ['indice', 'nombreCompleto','clave', 'plantel', 'turno', 'grupo', 'fecha'];
 
   mostrarGrupo = false
   profesorNombreMateria: string

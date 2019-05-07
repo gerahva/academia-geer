@@ -80,8 +80,8 @@ cursoSeleccionado(event:any){
       {value: 'word', viewValue: 'Word'},
       {value: 'excel', viewValue: 'Excel'},
 
-      {value: 'programacion', viewValue: 'Programación'},
-      {value: 'app-inventor', viewValue: 'App Inventor'}
+      {value: 'programacion', viewValue: 'Programación'}
+    /*  {value: 'app-inventor', viewValue: 'App Inventor'}  */
     ];
   }
   

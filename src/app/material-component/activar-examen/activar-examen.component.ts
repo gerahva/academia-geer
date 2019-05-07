@@ -46,10 +46,12 @@ buscarAlumno(){
   console.log("La materia es "+this.nombreMateria+" La clave del alumno es  "+this.claveAlumno);
   this.http
   .get<Alumno>(Globales.urlBase + "/alumno-clave/"+this.claveAlumno)
-  .subscribe(respuesta => (this.alumno = respuesta));
+  .subscribe(respuesta => {this.alumno = respuesta
+    console.log("Mensaje del servidor" + JSON.stringify(this.alumno));
+    this.estaDesactivado=false;
+  });
 setTimeout(() => {
-  console.log("Mensaje del servidor" + JSON.stringify(this.alumno));
-  this.estaDesactivado=false;
+
   }, 1500);
 }
 

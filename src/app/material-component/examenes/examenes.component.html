@@ -5,6 +5,8 @@
   <mat-card-content>
     <mat-card-title class="text-center">GEER Exámenes</mat-card-title>
     <mat-card-subtitle class="text-center">Exámenes de tu materia</mat-card-subtitle>
+
+    
     <p class="text-center">Selecciona un examen, se recomienda NO cancelar el examen una vez iniciado, exito!!</p>
    
   </mat-card-content>
@@ -41,9 +43,7 @@ TERMINA LOS CARDS DE LOS EXAMENES
 <!------------------------------------------------------------------------------------------------
   INICIA CARD DEL EXAMEN SELECCIONADO
 --------------------------------------------------------------------------------------------------->
-<div  *ngIf="estaExamenDiagnosticoRealizado">
-<h2>Lo siento, ya haz realizado el examen</h2>
-</div>
+
 
 <div class="card-body" *ngIf="puedeHacerExamen">
 
@@ -55,7 +55,7 @@ TERMINA LOS CARDS DE LOS EXAMENES
        </textarea>
     <br>
     <p>Pregunta {{contadorPregunta}} de {{numeroPreguntas}} </p>
-    <h3>{{preguntaActual.titulo}}</h3>
+    <p style="white-space: pre-line">{{preguntaActual.titulo}}</p>
 
  
     <mat-radio-group class="example-radio-group"  [(ngModel)]="selectedValue">

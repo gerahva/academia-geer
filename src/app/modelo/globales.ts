@@ -10,7 +10,7 @@ export class Globales {
   public static profesor: Profesor = {};
 
 public static urlBase:string="https://geradmin.herokuapp.com/api";
-// public static urlBase: string = "http://192.168.100.7:9000/api";
+ //public static urlBase: string = "http://192.168.100.7:9000/api";
 //public static urlBase: string = "http://localhost:9000/api";
   //TONTOTTTTTTTTTTT
 
@@ -44,14 +44,18 @@ public static urlBase:string="https://geradmin.herokuapp.com/api";
   ]
 
   public static inf2_examenes:any=[
-    {id:'inf2-diagnostico', nombre:'Diagnóstico'}
+    {id:'inf2-diagnostico', nombre:'Diagnóstico'},
+    {id:'inf2-b1', nombre:'Info 2, Bloque 1'},
+    {id:'inf2-b2', nombre:'Info 2, Bloque 2'}
   
  
    ]
 
    public static inf4_examenes:any=[
-    {id:'inf4-diagnostico', nombre:'Diagnóstico'}
-  
+    {id:'inf4-diagnostico', nombre:'Diagnóstico'},
+   {id:'inf4-b1', nombre:'Info 4, Bloque 1'},
+   {id:'inf4-b2', nombre:'Info 4, Bloque 2'},
+   {id:'inf4-b3', nombre:'Info 4, Bloque 3'}
  
    ]
   public static inf3_examenes:any=[

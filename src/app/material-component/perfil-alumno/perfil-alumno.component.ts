@@ -31,15 +31,15 @@ constructor(public http:HttpClient) { }
   ngOnInit() {
   }
   buscarAlumno(){
-
+    this.estaDesactivado=true;
     console.log("La clave es  "+this.claveAlumno);
     //La siguiente URL busca por clave del alumno
     this.http
-    .get<Alumno>(Globales.urlBase + "/alumno-clave/"+this.claveAlumno)
+    .get<Alumno>(Globales.urlBase + "/alumno-clave/"+this.claveAlumno+"/"+Globales.profesor.clave)
     .subscribe(respuesta => (this.alumno = respuesta));
   setTimeout(() => {
     console.log("Mensaje del servidor" + JSON.stringify(this.alumno));
-    this.estaDesactivado=false;
+    if(this.alumno!=null)this.estaDesactivado=false;
   this.email=this.alumno.email;
     this.grupo=this.alumno.grupo;
     this.password=this.alumno.password;

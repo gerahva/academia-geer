@@ -95,8 +95,7 @@ export class ResultadoBloque2Component implements OnInit {
       )
       .subscribe(respuesta => {
         this.alumnos = respuesta;
-      });
-    setTimeout(() => {
+        
       console.log(
         "Los alumnos que llegaron para el listado son" +
           JSON.stringify(this.alumnos)
@@ -165,6 +164,8 @@ export class ResultadoBloque2Component implements OnInit {
        this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
       this.estaCargando = false;
-    }, 1800);
+    
+      });
+ 
   }
 }
