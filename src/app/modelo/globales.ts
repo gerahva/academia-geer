@@ -46,8 +46,8 @@ public static urlBase:string="https://geradmin.herokuapp.com/api";
   public static inf2_examenes:any=[
     {id:'inf2-diagnostico', nombre:'Diagnóstico'},
     {id:'inf2-b1', nombre:'Info 2, Bloque 1'},
-    {id:'inf2-b2', nombre:'Info 2, Bloque 2'}
-  
+    {id:'inf2-b2', nombre:'Info 2, Bloque 2'},
+    {id:'inf2-b3', nombre:'Info 2, Bloque 3'}
  
    ]
 
